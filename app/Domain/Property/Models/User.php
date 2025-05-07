@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Models;
+namespace App\Domain\Property\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use App\Domain\Property\Models\Property;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -21,6 +23,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -45,4 +48,33 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+       /**
+     * Get the properties for the user.
+     */
+    public function properties()
+    {
+        return $this->hasMany(Property::class);
+    }
+
+    /**
+     * Check if user is admin.
+     */
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
+
+    /**
+     * Check if user is manager.
+     */
+    public function isManager(): bool
+    {
+        return $this->role === 'manager' || $this->role === 'admin';
+    }
+
+    protected static function newFactory()
+    {
+        return \Database\Factories\UserFactory::new();
+    }
+
 }
