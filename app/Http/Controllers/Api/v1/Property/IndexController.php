@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Services\PropertyService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Cache;
 
 class IndexController extends Controller
 {
@@ -24,13 +25,23 @@ class IndexController extends Controller
      */
     public function index(Request $request)
     {
+        $page = $request->input('page', 1);
         $perPage = $request->get('per_page', 15);
-        $properties = $this->propertyService->getAllProperties($perPage);
 
-        return response()->json([
-            'success' => true,
-            'data' => $properties
-        ]);
+        $cacheKey = 'properties_page_' . $page . '_' . $perPage;
+
+        // Add the key to our list of property cache keys
+        $this->trackCacheKey($cacheKey);
+
+        // Cache the results for 10 minutes
+        return Cache::remember($cacheKey, 600, function () use ($perPage) {
+            $properties = $this->propertyService->getAllProperties($perPage);
+
+            return response()->json([
+                'success' => true,
+                'data' => $properties
+            ]);
+        });
     }
 
     /**
@@ -59,6 +70,9 @@ class IndexController extends Controller
 
         $property = $this->propertyService->createProperty($request->all());
 
+        // Clear the properties cache after creating a new property
+        $this->clearPropertiesCache();
+
         return response()->json([
             'success' => true,
             'data' => $property
@@ -73,19 +87,23 @@ class IndexController extends Controller
      */
     public function show($id)
     {
-        try {
-            $property = $this->propertyService->getPropertyById($id);
+        $cacheKey = 'property_' . $id;
 
-            return response()->json([
-                'success' => true,
-                'data' => $property
-            ]);
-        } catch (\Exception $e) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Property not found'
-            ], 404);
-        }
+        return Cache::remember($cacheKey, 600, function () use ($id) {
+            try {
+                $property = $this->propertyService->getPropertyById($id);
+
+                return response()->json([
+                    'success' => true,
+                    'data' => $property
+                ]);
+            } catch (\Exception $e) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Property not found'
+                ], 404);
+            }
+        });
     }
 
     /**
@@ -116,6 +134,10 @@ class IndexController extends Controller
         try {
             $property = $this->propertyService->updateProperty($id, $request->all());
 
+            // Clear the properties cache and specific property cache
+            $this->clearPropertiesCache();
+            Cache::forget('property_' . $id);
+
             return response()->json([
                 'success' => true,
                 'data' => $property
@@ -139,6 +161,10 @@ class IndexController extends Controller
         try {
             $this->propertyService->deleteProperty($id);
 
+            // Clear the properties cache and specific property cache
+            $this->clearPropertiesCache();
+            Cache::forget('property_' . $id);
+
             return response()->json([
                 'success' => true,
                 'message' => 'Property deleted successfully'
@@ -160,12 +186,51 @@ class IndexController extends Controller
      */
     public function getByUser(Request $request, $userId)
     {
+        $page = $request->input('page', 1);
         $perPage = $request->get('per_page', 15);
-        $properties = $this->propertyService->getPropertiesByUser($userId, $perPage);
 
-        return response()->json([
-            'success' => true,
-            'data' => $properties
-        ]);
+        $cacheKey = 'properties_user_' . $userId . '_page_' . $page . '_' . $perPage;
+
+        // Add the key to our list of property cache keys
+        $this->trackCacheKey($cacheKey);
+
+        // Cache the results for 10 minutes
+        return Cache::remember($cacheKey, 600, function () use ($userId, $perPage) {
+            $properties = $this->propertyService->getPropertiesByUser($userId, $perPage);
+
+            return response()->json([
+                'success' => true,
+                'data' => $properties
+            ]);
+        });
+    }
+
+    /**
+     * Track cache keys for later invalidation
+     */
+    private function trackCacheKey($key)
+    {
+        $keys = Cache::get('property_cache_keys', []);
+        if (!in_array($key, $keys)) {
+            $keys[] = $key;
+            Cache::forever('property_cache_keys', $keys);
+        }
+    }
+
+    /**
+     * Clear all property list cache keys
+     */
+    private function clearPropertiesCache()
+    {
+        // Get all cache keys related to properties
+        $keys = Cache::get('property_cache_keys', []);
+
+        // Delete each key
+        foreach ($keys as $key) {
+            Cache::forget($key);
+        }
+
+        // Reset cache keys tracking
+        Cache::forever('property_cache_keys', []);
     }
 }

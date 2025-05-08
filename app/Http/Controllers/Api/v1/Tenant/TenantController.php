@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Api\v1\Tenant;
 
+use App\Domain\Property\Models\Tenant;
 use App\Http\Controllers\Controller;
 use App\Services\TenantService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Cache;
 
 
 class TenantController extends Controller
@@ -26,13 +28,22 @@ class TenantController extends Controller
      */
     public function index(Request $request)
     {
+        $page = $request->input('page', 1);
         $perPage = $request->get('per_page', 15);
-        $tenants = $this->tenantService->getAllTenants($perPage);
+        $cacheKey = 'tenants_page_' . $page . '_' . $perPage;
 
-        return response()->json([
-            'success' => true,
-            'data' => $tenants
-        ]);
+        // Add the key to our list of tenant cache keys
+        $this->trackCacheKey($cacheKey);
+
+        // Cache the results for 10 minutes
+        return Cache::remember($cacheKey, 600, function () use ($perPage) {
+            $tenants = $this->tenantService->getAllTenants($perPage);
+
+            return response()->json([
+                'success' => true,
+                'data' => $tenants
+            ]);
+        });
     }
 
     /**
@@ -64,6 +75,7 @@ class TenantController extends Controller
         }
 
         $tenant = $this->tenantService->createTenant($request->all());
+        $this->clearTenantsCache();
 
         return response()->json([
             'success' => true,
@@ -79,19 +91,23 @@ class TenantController extends Controller
      */
     public function show($id)
     {
-        $tenant = $this->tenantService->getTenantById($id);
+        $cacheKey = 'tenant_' . $id;
 
-        if (!$tenant) {
+        return Cache::remember($cacheKey, 600, function () use ($id) {
+            $tenant = $this->tenantService->getTenantById($id);
+
+            if (!$tenant) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Tenant not found'
+                ], Response::HTTP_NOT_FOUND);
+            }
+
             return response()->json([
-                'success' => false,
-                'message' => 'Tenant not found'
-            ], Response::HTTP_NOT_FOUND);
-        }
-
-        return response()->json([
-            'success' => true,
-            'data' => $tenant
-        ]);
+                'success' => true,
+                'data' => $tenant
+            ]);
+        });
     }
 
     /**
@@ -134,6 +150,10 @@ class TenantController extends Controller
 
         $updatedTenant = $this->tenantService->updateTenant($id, $request->all());
 
+        // Clear the tenants cache and specific tenant cache
+        $this->clearTenantsCache();
+        Cache::forget('tenant_' . $id);
+
         return response()->json([
             'success' => true,
             'data' => $updatedTenant
@@ -159,9 +179,42 @@ class TenantController extends Controller
 
         $this->tenantService->deleteTenant($id);
 
+        // Clear the tenants cache and specific tenant cache
+        $this->clearTenantsCache();
+        Cache::forget('tenant_' . $id);
+
         return response()->json([
             'success' => true,
             'message' => 'Tenant deleted successfully'
         ]);
+    }
+
+    /**
+     * Track cache keys for later invalidation
+     */
+    private function trackCacheKey($key)
+    {
+        $keys = Cache::get('tenant_cache_keys', []);
+        if (!in_array($key, $keys)) {
+            $keys[] = $key;
+            Cache::forever('tenant_cache_keys', $keys);
+        }
+    }
+
+    /**
+     * Clear all tenant list cache keys
+     */
+    private function clearTenantsCache()
+    {
+        // Get all cache keys related to tenants
+        $keys = Cache::get('tenant_cache_keys', []);
+
+        // Delete each key
+        foreach ($keys as $key) {
+            Cache::forget($key);
+        }
+
+        // Reset cache keys tracking
+        Cache::forever('tenant_cache_keys', []);
     }
 }
