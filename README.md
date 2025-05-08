@@ -1,61 +1,300 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Property Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A comprehensive real estate property management system built with Laravel, providing a robust API for managing properties, tenants, leases, maintenance requests, and payments.
 
-## About Laravel
+## Table of Contents
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- [Overview](#overview)
+- [Features](#features)
+- [Setup Instructions](#setup-instructions)
+- [API Documentation](#api-documentation)
+- [Architecture Overview](#architecture-overview)
+- [Security Measures](#security-measures)
+- [Caching Strategy](#caching-strategy)
+- [Scaling Approach](#scaling-approach)
+- [Testing](#testing)
+- [License](#license)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Overview
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+This property management system is designed to streamline the process of managing real estate properties, from tenant applications and lease management to maintenance requests and payment tracking. The application provides a RESTful API built with Laravel, allowing for integration with various frontend applications or mobile apps.
 
-## Learning Laravel
+## Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- User authentication and role-based access control
+- Property management (listing, categories, attributes)
+- Tenant management
+- Lease agreements and documents
+- Maintenance request tracking
+- Payment processing and invoicing
+- Reporting and analytics
+- Notification system
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Setup Instructions
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Prerequisites
 
-## Laravel Sponsors
+- PHP 8.1+
+- Composer 2.0+
+- MySQL 8.0+ or PostgreSQL 13+
+- Node.js 16+ and NPM (for frontend assets)
+- Redis (optional, for caching)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Installation Steps
 
-### Premium Partners
+1. **Clone the repository**
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+```bash
+git clone https://github.com/vnyambuti/propertymanagement.git
+cd propertymanagement
+```
 
-## Contributing
+2. **Install PHP dependencies**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+composer install
+```
 
-## Code of Conduct
+3. **Set up environment variables**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+cp .env.example .env
+```
 
-## Security Vulnerabilities
+Edit the `.env` file with your database credentials and other configuration settings.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+4. **Generate application key**
+
+```bash
+php artisan key:generate
+```
+
+5. **Run database migrations and seeders**
+
+```bash
+php artisan migrate
+php artisan db:seed
+```
+
+6. **Install JavaScript dependencies and compile assets**
+
+```bash
+npm install
+npm run dev
+```
+
+7. **Set up storage symlink**
+
+```bash
+php artisan storage:link
+```
+
+8. **Start the development server**
+
+```bash
+php artisan serve
+```
+
+The application should now be running at `http://localhost:8000`.
+
+### Docker Setup (Alternative)
+
+1. **Make sure Docker and Docker Compose are installed**
+
+2. **Build and start Docker containers**
+
+```bash
+docker-compose up -d
+```
+
+3. **Run migrations and seeders inside the container**
+
+```bash
+docker-compose exec app php artisan migrate --seed
+```
+
+The application will be accessible at `http://localhost:8080`.
+
+## API Documentation
+
+### Accessing Documentation
+
+The API documentation is available in two formats:
+
+1. **Swagger/OpenAPI**
+   
+   Access the Swagger UI documentation at `/api/documentation` when the application is running.
+
+2. **Postman Collection**
+   
+   A Postman collection file is included in the repository at `/docs/postman/property_management_api.json`. Import this file into Postman to access all API endpoints with examples.
+
+### Authentication
+
+The API uses JWT (JSON Web Tokens) for authentication:
+
+1. Register a new user or login with existing credentials at `/api/auth/login`
+2. Use the returned token in the Authorization header for subsequent requests:
+   `Authorization: Bearer {your_token_here}`
+
+### API Endpoints Overview
+
+| Resource | Endpoints |
+|----------|-----------|
+| Authentication | POST /api/auth/login, POST /api/auth/register, POST /api/auth/logout |
+| Properties | GET /api/properties, POST /api/properties, GET /api/properties/{id}, PUT /api/properties/{id}, DELETE /api/properties/{id} |
+| Tenants | GET /api/tenants, POST /api/tenants, GET /api/tenants/{id}, PUT /api/tenants/{id}, DELETE /api/tenants/{id} |
+| Leases | GET /api/leases, POST /api/leases, GET /api/leases/{id}, PUT /api/leases/{id}, DELETE /api/leases/{id} |
+| Maintenance | GET /api/maintenance-requests, POST /api/maintenance-requests, GET /api/maintenance-requests/{id}, PUT /api/maintenance-requests/{id} |
+| Payments | GET /api/payments, POST /api/payments, GET /api/payments/{id} |
+| Reports | GET /api/reports/occupancy, GET /api/reports/revenue, GET /api/reports/maintenance |
+
+## Architecture Overview
+
+### Application Structure
+
+The project follows a standard Laravel architecture with some additional patterns:
+
+- **Repository Pattern**: Data access is abstracted through repository classes
+- **Service Layer**: Business logic is contained in service classes
+- **API Resources**: Response transformations use Laravel's API resources
+- **Middleware**: Request filtering and validation through custom middleware
+- **Events & Listeners**: For handling asynchronous processes like notifications
+
+### Database Schema
+
+The database follows a normalized structure with the following key entities:
+
+- Users
+- Properties
+- PropertyTypes
+- PropertyAttributes
+- Tenants
+- Leases
+- MaintenanceRequests
+- Payments
+- Documents
+
+### Directory Structure
+
+```
+app/
+├── Console/          # Custom artisan commands
+├── Exceptions/       # Exception handlers
+├── Http/
+│   ├── Controllers/  # API and web controllers
+│   ├── Middleware/   # Request middleware
+│   └── Resources/    # API resource transformers
+├── Models/           # Eloquent models
+├── Providers/        # Service providers
+├── Repositories/     # Data access layer
+├── Services/         # Business logic
+└── Events/           # Event classes
+```
+
+## Security Measures
+
+The application implements several security best practices:
+
+1. **Authentication**:
+   - JWT-based token authentication with configurable expiry
+   - Role-based access control (RBAC)
+   - Protection against brute force attacks with rate limiting
+
+2. **Data Protection**:
+   - Input validation using Laravel's form request validation
+   - SQL injection prevention through parameterized queries
+   - XSS protection with content filtering
+
+3. **API Security**:
+   - CORS configuration for controlled cross-origin access
+   - API rate limiting to prevent abuse
+   - Require HTTPS in production
+
+4. **Sensitive Data**:
+   - Encryption of sensitive tenant information
+   - Secure storage of documents and lease agreements
+   - Password hashing using bcrypt
+
+5. **Auditing**:
+   - Activity logging for administrative actions
+   - Login attempt tracking
+
+## Caching Strategy
+
+The application implements a multi-layer caching approach:
+
+1. **Application Cache**:
+   - Property listings cached with automatic invalidation on updates
+   - User permissions cached to reduce database queries
+   - Configuration settings cached for performance
+
+2. **Database Query Cache**:
+   - Frequently accessed queries are cached using Laravel's query cache
+   - Report data is cached with scheduled refresh intervals
+
+3. **HTTP Caching**:
+   - ETag support for API responses
+   - Cache-Control headers for public resources
+
+4. **Cache Drivers**:
+   - Redis is the recommended cache driver for production
+   - File-based caching available for development environments
+
+5. **Cache Management**:
+   - Artisan commands for managing cache
+   - Automatic cache clearing for critical updates
+
+## Scaling Approach
+
+The application is designed with scalability in mind:
+
+1. **Horizontal Scaling**:
+   - Stateless API design allows for multiple server instances
+   - Session storage in Redis enables load balancing
+
+2. **Database Optimization**:
+   - Indexing strategy for common query patterns
+   - Database connection pooling
+   - Read replicas can be configured for high-read scenarios
+
+3. **Queue System**:
+   - Resource-intensive tasks (report generation, notifications) use Laravel's queue system
+   - Background processing for email sending and document generation
+
+4. **Media Storage**:
+   - Property images and documents use cloud storage (S3 compatible)
+   - CDN integration for faster media delivery
+
+5. **Monitoring & Performance**:
+   - Integration with application performance monitoring (APM) tools
+   - Query performance monitoring
+   - Custom artisan commands for performance diagnostics
+
+## Testing
+
+The application includes comprehensive testing:
+
+```bash
+# Run all tests
+php artisan test
+
+# Run specific test suite
+php artisan test --testsuite=Feature
+
+# Run tests with coverage report
+php artisan test --coverage
+```
+
+Test coverage includes:
+- Unit tests for repositories and services
+- Feature tests for API endpoints
+- Integration tests for complex workflows
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+[MIT License](LICENSE.md)
+
+---
+
+Developed by [Victor Nyambuti](https://github.com/vnyambuti)
