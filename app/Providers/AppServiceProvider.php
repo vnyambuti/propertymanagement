@@ -12,7 +12,38 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+         // Register services
+         $this->app->bind(\App\Services\PropertyService::class, function ($app) {
+            return new \App\Services\PropertyService(
+                $app->make(\App\Repositories\Interfaces\PropertyRepositoryInterface::class)
+            );
+        });
+
+        $this->app->bind(\App\Services\UnitService::class, function ($app) {
+            return new \App\Services\UnitService(
+                $app->make(\App\Repositories\Interfaces\UnitRepositoryInterface::class)
+            );
+        });
+
+        $this->app->bind(\App\Services\TenantService::class, function ($app) {
+            return new \App\Services\TenantService(
+                $app->make(\App\Repositories\Interfaces\TenantRepositoryInterface::class)
+            );
+        });
+
+        $this->app->bind(\App\Services\LeaseService::class, function ($app) {
+            return new \App\Services\LeaseService(
+                $app->make(\App\Repositories\Interfaces\LeaseRepositoryInterface::class),
+                $app->make(\App\Repositories\Interfaces\UnitRepositoryInterface::class)
+            );
+        });
+
+        $this->app->bind(\App\Services\PaymentService::class, function ($app) {
+            return new \App\Services\PaymentService(
+                $app->make(\App\Repositories\Interfaces\PaymentRepositoryInterface::class),
+                $app->make(\App\Repositories\Interfaces\LeaseRepositoryInterface::class)
+            );
+        });
     }
 
     /**
