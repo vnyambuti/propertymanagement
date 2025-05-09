@@ -102,13 +102,9 @@ The application should now be running at `http://localhost:8000`.
 
 The API documentation is available in two formats:
 
-1. **Swagger/OpenAPI**
+1. **Postman Collection**
    
-   Access the Swagger UI documentation at `/api/documentation` when the application is running.
-
-2. **Postman Collection**
-   
-   A Postman collection file is included in the repository at `/docs/postman/property_management_api.json`. Import this file into Postman to access all API endpoints with examples.
+   A Postman collection file is included in the repository at `/storage/private/2025_05_09_142911_postman.json`. Import this file into Postman to access all API endpoints with examples.
 
 ### Authentication
 

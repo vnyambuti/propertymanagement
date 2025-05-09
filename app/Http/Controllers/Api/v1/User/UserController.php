@@ -9,6 +9,21 @@ use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+
+/**
+ * @OA\Tag(
+ *     name="Users",
+ *     description="API Endpoints for Users management"
+ * )
+ *
+ *
+ * @OA\SecurityScheme(
+ *     securityScheme="bearerAuth",
+ *     type="http",
+ *     scheme="bearer",
+ *     bearerFormat="JWT"
+ * )
+ */
 class UserController extends Controller
 {
     protected $userService;
@@ -25,6 +40,67 @@ class UserController extends Controller
     }
 
     /**
+     * @OA\Get(
+     *     path="/api/v1/users",
+     *     operationId="getUsersList",
+     *     tags={"Users"},
+     *     summary="Get paginated list of users",
+     *     description="Retrieves a paginated list of users with optional filtering",
+     *     security={{"bearerAuth":{}}},
+     *     @OA\Parameter(
+     *         name="per_page",
+     *         in="query",
+     *         description="Number of items per page",
+     *         required=false,
+     *         @OA\Schema(type="integer", default=15)
+     *     ),
+     *     @OA\Parameter(
+     *         name="search",
+     *         in="query",
+     *         description="Search term for filtering users",
+     *         required=false,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Parameter(
+     *         name="role",
+     *         in="query",
+     *         description="Filter users by role",
+     *         required=false,
+     *         @OA\Schema(type="string", enum={"user", "manager", "admin"})
+     *     ),
+     *     @OA\Parameter(
+     *         name="sort_field",
+     *         in="query",
+     *         description="Field to sort by",
+     *         required=false,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Parameter(
+     *         name="sort_direction",
+     *         in="query",
+     *         description="Direction to sort",
+     *         required=false,
+     *         @OA\Schema(type="string", enum={"asc", "desc"})
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful operation",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(ref="#/components/schemas/User")),
+     *             @OA\Property(property="meta", type="object"),
+     *             @OA\Property(property="links", type="object")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=403,
+     *         description="Unauthorized - Not enough permissions",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Unauthorized. Not enough permissions.")
+     *         )
+     *     )
+     * )
+     *
      * Get a list of users with pagination.
      *
      * @param Request $request
@@ -53,6 +129,58 @@ class UserController extends Controller
     }
 
     /**
+     * @OA\Get(
+     *     path="/api/v1/users/all",
+     *     operationId="getAllUsers",
+     *     tags={"Users"},
+     *     summary="Get all users without pagination",
+     *     description="Retrieves all users with optional filtering",
+     *     security={{"bearerAuth":{}}},
+     *     @OA\Parameter(
+     *         name="search",
+     *         in="query",
+     *         description="Search term for filtering users",
+     *         required=false,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Parameter(
+     *         name="role",
+     *         in="query",
+     *         description="Filter users by role",
+     *         required=false,
+     *         @OA\Schema(type="string", enum={"user", "manager", "admin"})
+     *     ),
+     *     @OA\Parameter(
+     *         name="sort_field",
+     *         in="query",
+     *         description="Field to sort by",
+     *         required=false,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Parameter(
+     *         name="sort_direction",
+     *         in="query",
+     *         description="Direction to sort",
+     *         required=false,
+     *         @OA\Schema(type="string", enum={"asc", "desc"})
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful operation",
+     *         @OA\JsonContent(
+     *             type="array",
+     *             @OA\Items(ref="#/components/schemas/User")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=403,
+     *         description="Unauthorized - Not enough permissions",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Unauthorized. Not enough permissions.")
+     *         )
+     *     )
+     * )
+     *
      * Get all users.
      *
      * @param Request $request
@@ -80,6 +208,41 @@ class UserController extends Controller
     }
 
     /**
+     * @OA\Get(
+     *     path="/api/v1/users/{id}",
+     *     operationId="getUserById",
+     *     tags={"Users"},
+     *     summary="Get user by ID",
+     *     description="Retrieves a specific user by their ID",
+     *     security={{"bearerAuth":{}}},
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         description="ID of user to return",
+     *         required=true,
+     *         @OA\Schema(type="integer", format="int64")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful operation",
+     *         @OA\JsonContent(ref="#/components/schemas/User")
+     *     ),
+     *     @OA\Response(
+     *         response=403,
+     *         description="Unauthorized - Not enough permissions",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Unauthorized. Not enough permissions.")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="User not found",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="User not found.")
+     *         )
+     *     )
+     * )
+     *
      * Get a specific user.
      *
      * @param Request $request
@@ -107,6 +270,57 @@ class UserController extends Controller
     }
 
     /**
+     * @OA\Post(
+     *     path="/api/v1/users",
+     *     operationId="createUser",
+     *     tags={"Users"},
+     *     summary="Create a new user",
+     *     description="Creates a new user (admin only)",
+     *     security={{"bearerAuth":{}}},
+     *     @OA\RequestBody(
+     *         required=true,
+     *         description="User creation data",
+     *         @OA\JsonContent(
+     *             required={"name", "email", "password"},
+     *             @OA\Property(property="name", type="string", example="John Doe"),
+     *             @OA\Property(property="email", type="string", format="email", example="john@example.com"),
+     *             @OA\Property(property="password", type="string", format="password", example="password123"),
+     *             @OA\Property(property="role", type="string", enum={"user", "manager", "admin"}, example="user")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=201,
+     *         description="User created successfully",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="User created successfully"),
+     *             @OA\Property(property="user", ref="#/components/schemas/User")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=403,
+     *         description="Unauthorized - Not enough permissions",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Unauthorized. Not enough permissions.")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=422,
+     *         description="Validation failed",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Validation failed"),
+     *             @OA\Property(property="errors", type="object")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="Failed to create user",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Failed to create user"),
+     *             @OA\Property(property="error", type="string")
+     *         )
+     *     )
+     * )
+     *
      * Create a new user.
      *
      * @param Request $request
@@ -155,6 +369,69 @@ class UserController extends Controller
     }
 
     /**
+     * @OA\Put(
+     *     path="/api/v1/users/{id}",
+     *     operationId="updateUser",
+     *     tags={"Users"},
+     *     summary="Update an existing user",
+     *     description="Updates a user's details",
+     *     security={{"bearerAuth":{}}},
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         description="ID of user to update",
+     *         required=true,
+     *         @OA\Schema(type="integer", format="int64")
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *         description="User update data",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="name", type="string", example="John Doe"),
+     *             @OA\Property(property="email", type="string", format="email", example="john@example.com"),
+     *             @OA\Property(property="role", type="string", enum={"user", "manager", "admin"}, example="user")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="User updated successfully",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="User updated successfully"),
+     *             @OA\Property(property="user", ref="#/components/schemas/User")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=403,
+     *         description="Unauthorized - Not enough permissions",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Unauthorized. Not enough permissions.")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="User not found",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="User not found.")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=422,
+     *         description="Validation failed",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Validation failed"),
+     *             @OA\Property(property="errors", type="object")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="Failed to update user",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Failed to update user"),
+     *             @OA\Property(property="error", type="string")
+     *         )
+     *     )
+     * )
+     *
      * Update an existing user.
      *
      * @param Request $request
@@ -235,6 +512,58 @@ class UserController extends Controller
     }
 
     /**
+     * @OA\Delete(
+     *     path="/api/v1/users/{id}",
+     *     operationId="deleteUser",
+     *     tags={"Users"},
+     *     summary="Delete a user",
+     *     description="Deletes a user (admin only)",
+     *     security={{"bearerAuth":{}}},
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         description="ID of user to delete",
+     *         required=true,
+     *         @OA\Schema(type="integer", format="int64")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="User deleted successfully",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="User deleted successfully")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=400,
+     *         description="Cannot delete own account",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="You cannot delete your own account.")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=403,
+     *         description="Unauthorized - Not enough permissions",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Unauthorized. Not enough permissions.")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="User not found",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="User not found.")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="Failed to delete user",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Failed to delete user"),
+     *             @OA\Property(property="error", type="string")
+     *         )
+     *     )
+     * )
+     *
      * Delete a user.
      *
      * @param Request $request
@@ -278,6 +607,62 @@ class UserController extends Controller
     }
 
     /**
+     * @OA\Post(
+     *     path="/api/v1/users/{id}/change-password",
+     *     operationId="changeUserPassword",
+     *     tags={"Users"},
+     *     summary="Change user password",
+     *     description="Changes a user's password",
+     *     security={{"bearerAuth":{}}},
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         description="ID of user to change password",
+     *         required=true,
+     *         @OA\Schema(type="integer", format="int64")
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *         description="Password change data",
+     *         @OA\JsonContent(
+     *             required={"current_password", "password", "password_confirmation"},
+     *             @OA\Property(property="current_password", type="string", format="password", example="oldpassword"),
+     *             @OA\Property(property="password", type="string", format="password", example="newpassword"),
+     *             @OA\Property(property="password_confirmation", type="string", format="password", example="newpassword")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Password changed successfully",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Password changed successfully")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=403,
+     *         description="Unauthorized - Not enough permissions",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Unauthorized. Not enough permissions.")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=422,
+     *         description="Validation failed",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Validation failed"),
+     *             @OA\Property(property="errors", type="object")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="Failed to change password",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Failed to change password"),
+     *             @OA\Property(property="error", type="string")
+     *         )
+     *     )
+     * )
+     *
      * Change user password.
      *
      * @param Request $request
@@ -330,6 +715,44 @@ class UserController extends Controller
     }
 
     /**
+     * @OA\Get(
+     *     path="/api/v1/users/role/{role}",
+     *     operationId="getUsersByRole",
+     *     tags={"Users"},
+     *     summary="Get users by role",
+     *     description="Retrieves users filtered by role",
+     *     security={{"bearerAuth":{}}},
+     *     @OA\Parameter(
+     *         name="role",
+     *         in="path",
+     *         description="Role to filter by",
+     *         required=true,
+     *         @OA\Schema(type="string", enum={"user", "manager", "admin"})
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful operation",
+     *         @OA\JsonContent(
+     *             type="array",
+     *             @OA\Items(ref="#/components/schemas/User")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=400,
+     *         description="Invalid role specified",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Invalid role specified.")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=403,
+     *         description="Unauthorized - Not enough permissions",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Unauthorized. Not enough permissions.")
+     *         )
+     *     )
+     * )
+     *
      * Get users by role.
      *
      * @param Request $request
@@ -357,3 +780,16 @@ class UserController extends Controller
         return response()->json($users);
     }
 }
+
+/**
+ * @OA\Schema(
+ *     schema="User",
+ *     required={"id", "name", "email", "role"},
+ *     @OA\Property(property="id", type="integer", format="int64", example=1),
+ *     @OA\Property(property="name", type="string", example="John Doe"),
+ *     @OA\Property(property="email", type="string", format="email", example="john@example.com"),
+ *     @OA\Property(property="role", type="string", enum={"user", "manager", "admin"}, example="user"),
+ *     @OA\Property(property="created_at", type="string", format="date-time"),
+ *     @OA\Property(property="updated_at", type="string", format="date-time")
+ * )
+ */

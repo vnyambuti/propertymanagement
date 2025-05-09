@@ -7,6 +7,19 @@ use App\Services\PropertyService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Cache;
+use OpenApi\Attributes as OA;
+
+/**
+ * @OA\Tag(
+ *     name="Property",
+ *     description="API Endpoints for property management"
+ * )
+ *
+ * @OA\Server(
+ *     url="/api/v1",
+ *     description="API Server"
+ * )
+ */
 
 class IndexController extends Controller
 {
@@ -22,6 +35,51 @@ class IndexController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     *
+     * @OA\Get(
+     *     path="/property",
+     *     summary="Get a list of properties",
+     *     description="Returns a paginated list of all properties",
+     *     operationId="getPropertiesList",
+     *     tags={"Properties"},
+     *     @OA\Parameter(
+     *         name="page",
+     *         in="query",
+     *         description="Page number",
+     *         required=false,
+     *         @OA\Schema(type="integer", default=1)
+     *     ),
+     *     @OA\Parameter(
+     *         name="per_page",
+     *         in="query",
+     *         description="Number of items per page",
+     *         required=false,
+     *         @OA\Schema(type="integer", default=15)
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful operation",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="success", type="boolean", example=true),
+     *             @OA\Property(
+     *                 property="data",
+     *                 type="object",
+     *                 @OA\Property(property="current_page", type="integer", example=1),
+     *                 @OA\Property(
+     *                     property="data",
+     *                     type="array",
+     *                     @OA\Items(ref="#/components/schemas/Property")
+     *                 ),
+     *                 @OA\Property(property="total", type="integer", example=30),
+     *                 @OA\Property(property="per_page", type="integer", example=15)
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="Server error"
+     *     )
+     * )
      */
     public function index(Request $request)
     {
@@ -49,6 +107,55 @@ class IndexController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     *
+     * @OA\Post(
+     *     path="/property",
+     *     summary="Create a new property",
+     *     description="Stores a new property and returns the property data",
+     *     operationId="storeProperty",
+     *     tags={"Properties"},
+     *     @OA\RequestBody(
+     *         required=true,
+     *         description="Property data",
+     *         @OA\JsonContent(
+     *             required={"name", "address", "town", "county", "type", "user_id"},
+     *             @OA\Property(property="name", type="string", example="Sunset Apartments"),
+     *             @OA\Property(property="address", type="string", example="123 Main Street"),
+     *             @OA\Property(property="town", type="string", example="Springfield"),
+     *             @OA\Property(property="county", type="string", example="Greenfield County"),
+     *             @OA\Property(
+     *                 property="type",
+     *                 type="string",
+     *                 enum={"apartment", "house", "commercial", "condo", "townhouse"},
+     *                 example="apartment"
+     *             ),
+     *             @OA\Property(property="user_id", type="integer", example=10)
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=201,
+     *         description="Property created successfully",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="success", type="boolean", example=true),
+     *             @OA\Property(property="data", ref="#/components/schemas/Property")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=422,
+     *         description="Validation error",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="success", type="boolean", example=false),
+     *             @OA\Property(
+     *                 property="errors",
+     *                 type="object"
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="Server error"
+     *     )
+     * )
      */
     public function store(Request $request)
     {
@@ -57,9 +164,8 @@ class IndexController extends Controller
             'address' => 'required|string|max:255',
             'town' => 'required|string|max:255',
             'county' => 'required|string|max:255',
-            'type' => 'required|string|max:50',
+            'type' => 'required|string|in:apartment,house,commercial,condo,townhouse',
             'user_id' => 'required|exists:users,id',
-
         ]);
 
         if ($validator->fails()) {
@@ -85,6 +191,41 @@ class IndexController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     *
+     * @OA\Get(
+     *     path="/property/{id}",
+     *     summary="Get property details",
+     *     description="Returns details for a specific property",
+     *     operationId="getProperty",
+     *     tags={"Properties"},
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         description="Property ID",
+     *         required=true,
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful operation",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="success", type="boolean", example=true),
+     *             @OA\Property(property="data", ref="#/components/schemas/Property")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="Property not found",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="success", type="boolean", example=false),
+     *             @OA\Property(property="message", type="string", example="Property not found")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="Server error"
+     *     )
+     * )
      */
     public function show($id)
     {
@@ -113,6 +254,69 @@ class IndexController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     *
+     * @OA\Put(
+     *     path="/property/{id}",
+     *     summary="Update a property",
+     *     description="Updates an existing property and returns the updated property data",
+     *     operationId="updateProperty",
+     *     tags={"Properties"},
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         description="Property ID",
+     *         required=true,
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *         description="Property data",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="name", type="string", example="Sunset Apartments Updated"),
+     *             @OA\Property(property="address", type="string", example="123 Main Street"),
+     *             @OA\Property(property="town", type="string", example="Springfield"),
+     *             @OA\Property(property="county", type="string", example="Greenfield County"),
+     *             @OA\Property(
+     *                 property="type",
+     *                 type="string",
+     *                 enum={"apartment", "house", "commercial", "condo", "townhouse"},
+     *                 example="apartment"
+     *             ),
+     *             @OA\Property(property="user_id", type="integer", example=10)
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Property updated successfully",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="success", type="boolean", example=true),
+     *             @OA\Property(property="data", ref="#/components/schemas/Property")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="Property not found",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="success", type="boolean", example=false),
+     *             @OA\Property(property="message", type="string", example="Property not found")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=422,
+     *         description="Validation error",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="success", type="boolean", example=false),
+     *             @OA\Property(
+     *                 property="errors",
+     *                 type="object"
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="Server error"
+     *     )
+     * )
      */
     public function update(Request $request, $id)
     {
@@ -121,7 +325,7 @@ class IndexController extends Controller
             'address' => 'sometimes|string|max:255',
             'town' => 'sometimes|string|max:255',
             'county' => 'sometimes|string|max:255',
-            'type' => 'sometimes|string|max:50',
+            'type' => 'sometimes|string|in:apartment,house,commercial,condo,townhouse',
             'user_id' => 'sometimes|exists:users,id',
         ]);
 
@@ -156,6 +360,41 @@ class IndexController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     *
+     * @OA\Delete(
+     *     path="/property/{id}",
+     *     summary="Delete a property",
+     *     description="Deletes a property and returns a success message",
+     *     operationId="deleteProperty",
+     *     tags={"Properties"},
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         description="Property ID",
+     *         required=true,
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Property deleted successfully",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="success", type="boolean", example=true),
+     *             @OA\Property(property="message", type="string", example="Property deleted successfully")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="Property not found",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="success", type="boolean", example=false),
+     *             @OA\Property(property="message", type="string", example="Property not found")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="Server error"
+     *     )
+     * )
      */
     public function destroy($id)
     {
@@ -184,6 +423,66 @@ class IndexController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $userId
      * @return \Illuminate\Http\Response
+     *
+     * @OA\Get(
+     *     path="/property/user/{userId}",
+     *     summary="Get properties by user",
+     *     description="Returns a paginated list of properties for a specific user",
+     *     operationId="getPropertiesByUser",
+     *     tags={"Properties"},
+     *     @OA\Parameter(
+     *         name="userId",
+     *         in="path",
+     *         description="User ID",
+     *         required=true,
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\Parameter(
+     *         name="page",
+     *         in="query",
+     *         description="Page number",
+     *         required=false,
+     *         @OA\Schema(type="integer", default=1)
+     *     ),
+     *     @OA\Parameter(
+     *         name="per_page",
+     *         in="query",
+     *         description="Number of items per page",
+     *         required=false,
+     *         @OA\Schema(type="integer", default=15)
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful operation",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="success", type="boolean", example=true),
+     *             @OA\Property(
+     *                 property="data",
+     *                 type="object",
+     *                 @OA\Property(property="current_page", type="integer", example=1),
+     *                 @OA\Property(
+     *                     property="data",
+     *                     type="array",
+     *                     @OA\Items(ref="#/components/schemas/Property")
+     *                 ),
+     *                 @OA\Property(property="total", type="integer", example=30),
+     *                 @OA\Property(property="per_page", type="integer", example=15)
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="User not found",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="success", type="boolean", example=false),
+     *             @OA\Property(property="message", type="string", example="User not found")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="Server error"
+     *     )
+     * )
      */
     public function getByUser(Request $request, $userId)
     {

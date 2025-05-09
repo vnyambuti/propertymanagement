@@ -10,6 +10,190 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Cache;
 
+/**
+ * @OA\Tag(
+ *     name="Tenant",
+ *     description="API Endpoints for Tenant management"
+ * )
+ *
+ * @OA\Get(
+ *     path="/tenant",
+ *     summary="Get a list of tenants",
+ *     description="Returns a paginated list of all tenants",
+ *     operationId="getTenantsList",
+ *     tags={"Tenant"},
+ *     @OA\Parameter(
+ *         name="page",
+ *         in="query",
+ *         description="Page number",
+ *         required=false,
+ *         @OA\Schema(type="integer", default=1)
+ *     ),
+ *     @OA\Parameter(
+ *         name="per_page",
+ *         in="query",
+ *         description="Number of items per page",
+ *         required=false,
+ *         @OA\Schema(type="integer", default=15)
+ *     ),
+ *     @OA\Response(
+ *         response=200,
+ *         description="Successful operation",
+ *         @OA\JsonContent(
+ *             @OA\Property(property="success", type="boolean", example=true),
+ *             @OA\Property(
+ *                 property="data",
+ *                 type="object",
+ *                 @OA\Property(property="current_page", type="integer", example=1),
+ *                 @OA\Property(
+ *                     property="data",
+ *                     type="array",
+ *                     @OA\Items(ref="#/components/schemas/Tenant")
+ *                 ),
+ *                 @OA\Property(property="total", type="integer", example=30),
+ *                 @OA\Property(property="per_page", type="integer", example=15)
+ *             )
+ *         )
+ *     ),
+ *     @OA\Response(
+ *         response=500,
+ *         description="Server error"
+ *     )
+ * )
+ *
+ * @OA\Post(
+ *     path="/tenant",
+ *     summary="Create a new tenant",
+ *     description="Stores a new tenant and returns the tenant data",
+ *     operationId="storeTenant",
+ *     tags={"Tenant"},
+ *     @OA\RequestBody(
+ *         required=true,
+ *         description="Tenant data",
+ *         @OA\JsonContent(ref="#/components/schemas/TenantRequest")
+ *     ),
+ *     @OA\Response(
+ *         response=201,
+ *         description="Tenant created successfully",
+ *         @OA\JsonContent(
+ *             @OA\Property(property="success", type="boolean", example=true),
+ *             @OA\Property(property="data", ref="#/components/schemas/Tenant")
+ *         )
+ *     ),
+ *     @OA\Response(
+ *         response=422,
+ *         description="Validation error",
+ *         @OA\JsonContent(ref="#/components/schemas/ErrorResponse")
+ *     ),
+ *     @OA\Response(
+ *         response=500,
+ *         description="Server error"
+ *     )
+ * )
+ *
+ * @OA\Get(
+ *     path="/tenant/{id}",
+ *     summary="Get tenant details",
+ *     description="Returns details for a specific tenant",
+ *     operationId="getTenant",
+ *     tags={"Tenant"},
+ *     @OA\Parameter(
+ *         name="id",
+ *         in="path",
+ *         description="Tenant ID",
+ *         required=true,
+ *         @OA\Schema(type="integer")
+ *     ),
+ *     @OA\Response(
+ *         response=200,
+ *         description="Successful operation",
+ *         @OA\JsonContent(
+ *             @OA\Property(property="success", type="boolean", example=true),
+ *             @OA\Property(property="data", ref="#/components/schemas/Tenant")
+ *         )
+ *     ),
+ *     @OA\Response(
+ *         response=404,
+ *         description="Tenant not found",
+ *         @OA\JsonContent(ref="#/components/schemas/MessageResponse")
+ *     ),
+ *     @OA\Response(
+ *         response=500,
+ *         description="Server error"
+ *     )
+ * )
+ *
+ * @OA\Put(
+ *     path="/tenant/{id}",
+ *     summary="Update a tenant",
+ *     description="Updates an existing tenant and returns the updated tenant data",
+ *     operationId="updateTenant",
+ *     tags={"Tenant"},
+ *     @OA\Parameter(
+ *         name="id",
+ *         in="path",
+ *         description="Tenant ID",
+ *         required=true,
+ *         @OA\Schema(type="integer")
+ *     ),
+ *     @OA\RequestBody(
+ *         required=true,
+ *         description="Tenant data",
+ *         @OA\JsonContent(ref="#/components/schemas/TenantRequest")
+ *     ),
+ *     @OA\Response(
+ *         response=200,
+ *         description="Tenant updated successfully",
+ *         @OA\JsonContent(
+ *             @OA\Property(property="success", type="boolean", example=true),
+ *             @OA\Property(property="data", ref="#/components/schemas/Tenant")
+ *         )
+ *     ),
+ *     @OA\Response(
+ *         response=404,
+ *         description="Tenant not found",
+ *         @OA\JsonContent(ref="#/components/schemas/MessageResponse")
+ *     ),
+ *     @OA\Response(
+ *         response=422,
+ *         description="Validation error",
+ *         @OA\JsonContent(ref="#/components/schemas/ErrorResponse")
+ *     ),
+ *     @OA\Response(
+ *         response=500,
+ *         description="Server error"
+ *     )
+ * )
+ *
+ * @OA\Delete(
+ *     path="/tenant/{id}",
+ *     summary="Delete a tenant",
+ *     description="Deletes a tenant and returns a success message",
+ *     operationId="deleteTenant",
+ *     tags={"Tenant"},
+ *     @OA\Parameter(
+ *         name="id",
+ *         in="path",
+ *         description="Tenant ID",
+ *         required=true,
+ *         @OA\Schema(type="integer")
+ *     ),
+ *     @OA\Response(
+ *         response=200,
+ *         description="Tenant deleted successfully",
+ *         @OA\JsonContent(ref="#/components/schemas/MessageResponse")
+ *     ),
+ *     @OA\Response(
+ *         response=404,
+ *         description="Tenant not found",
+ *         @OA\JsonContent(ref="#/components/schemas/MessageResponse")
+ *     ),
+ *     @OA\Response(
+ *         response=500,
+ *         description="Server error"
+ *     )
+ * )
+ */
 
 class TenantController extends Controller
 {
