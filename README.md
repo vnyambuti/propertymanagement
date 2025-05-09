@@ -104,7 +104,7 @@ The API documentation is available in two formats:
 
 1. **Postman Collection**
    
-   A Postman collection file is included in the repository at `/storage/private/2025_05_09_142911_postman.json`. Import this file into Postman to access all API endpoints with examples.
+   A Postman collection file is included in the repository at `/storage/2025_05_09_142911_postman.json`. Import this file into Postman to access all API endpoints with examples.
 
 ### Authentication
 
