@@ -269,9 +269,8 @@ php artisan test --coverage
 ```
 
 Test coverage includes:
-- Unit tests for repositories and services
-- Feature tests for API endpoints
-- Integration tests for complex workflows
+- Unit tests for Auth and resource controllers
+- Feature tests for Auth and resource controllers
 
 ## License
 
