@@ -59,6 +59,7 @@ class IndexController extends Controller
             'county' => 'required|string|max:255',
             'type' => 'required|string|max:50',
             'user_id' => 'required|exists:users,id',
+
         ]);
 
         if ($validator->fails()) {

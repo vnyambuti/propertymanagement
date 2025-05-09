@@ -1,20 +1,41 @@
 <?php
 namespace App\Services;
 
+use App\Domain\Property\Models\Lease;
+use App\Domain\Property\Models\Payment;
+use App\Domain\Property\Models\Property;
+use App\Domain\Property\Models\Tenant;
+use App\Domain\Property\Models\Unit;
+use App\Jobs\SendPaymentReceipt;
 use App\Repositories\Interfaces\PaymentRepositoryInterface;
 use App\Repositories\Interfaces\LeaseRepositoryInterface;
+use App\Repositories\Interfaces\PropertyRepositoryInterface;
+use App\Repositories\Interfaces\TenantRepositoryInterface;
+use App\Repositories\Interfaces\UnitRepositoryInterface;
+
 
 class PaymentService
 {
     protected $paymentRepository;
     protected $leaseRepository;
+    protected $tenantRepository;
+    protected $unitRepository;
+    protected $propertyRepository;
 
     public function __construct(
         PaymentRepositoryInterface $paymentRepository,
-        LeaseRepositoryInterface $leaseRepository
+        LeaseRepositoryInterface $leaseRepository,
+        TenantRepositoryInterface $tenantRepository,
+        UnitRepositoryInterface $unitRepository,
+        PropertyRepositoryInterface $propertyRepository
+
     ) {
         $this->paymentRepository = $paymentRepository;
         $this->leaseRepository = $leaseRepository;
+        $this->tenantRepository=$tenantRepository;
+        $this->unitRepository=$unitRepository;
+        $this->propertyRepository=$propertyRepository;
+
     }
 
     public function getAllPayments($perPage = 15)
@@ -90,4 +111,31 @@ class PaymentService
             'notes' => 'Monthly rent invoice'
         ]);
     }
+
+    public function sendPaymentReceipt(int $paymentId): bool
+    {
+        $payment = $this->paymentRepository->getPaymentById($paymentId);
+
+        if (!$payment || $payment->status !== 'completed') {
+            return false;
+        }
+
+        // Get the related data
+        $lease = $this->leaseRepository->getLeaseById($payment->lease_id);;
+        $tenant = $this->tenantRepository->getTenantById($lease->tenant_id);
+        $unit = $this->unitRepository->getUnitById($lease->unit_id);
+        $property = $this->propertyRepository->getPropertyById($unit->property_id);
+
+        // Dispatch the job to the queue
+        SendPaymentReceipt::dispatch(
+            $payment,
+            $tenant,
+            $property,
+            $unit,
+            $tenant->email
+        );
+
+        return true;
+    }
+
 }

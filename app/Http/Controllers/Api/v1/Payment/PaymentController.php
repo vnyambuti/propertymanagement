@@ -4,21 +4,24 @@ namespace App\Http\Controllers\Api\v1\Payment;
 
 use App\Http\Controllers\Controller;
 use App\Services\PaymentService;
+use App\Services\RentReminderService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class PaymentController extends Controller
 {
     protected $paymentService;
+    protected $reminderService;
 
     /**
      * Create a new controller instance.
      *
      * @param PaymentService $paymentService
      */
-    public function __construct(PaymentService $paymentService)
+    public function __construct(PaymentService $paymentService,RentReminderService $reminderService)
     {
         $this->paymentService = $paymentService;
-
+        $this->reminderService = $reminderService;
 
     }
 
@@ -188,6 +191,12 @@ class PaymentController extends Controller
         if (!$payment) {
             return response()->json(['message' => 'Payment not found'], 404);
         }
+        try {
+            $this->paymentService->sendPaymentReceipt($id);
+        } catch (\Exception $e) {
+            // Log the error but don't fail the request
+            Log::error('Failed to queue payment receipt: ' . $e->getMessage());
+        }
 
         return response()->json($payment);
     }
@@ -211,4 +220,48 @@ class PaymentController extends Controller
             return response()->json(['message' => $e->getMessage()], 400);
         }
     }
+
+     /**
+     * Send a payment receipt via email.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function sendPaymentReceipt($id)
+    {
+        try {
+            $result = $this->paymentService->sendPaymentReceipt($id);
+
+            if (!$result) {
+                return response()->json(['message' => 'Payment not found'], 404);
+            }
+
+            return response()->json(['message' => 'Payment receipt queued for delivery']);
+        } catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 400);
+        }
+    }
+
+
+    /**
+     * Send a rent reminder for a specific payment.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function sendRentReminder($id)
+    {
+        try {
+            $result = $this->reminderService->sendReminderForPayment($id);
+
+            if (!$result) {
+                return response()->json(['message' => 'Payment not found or reminder could not be sent'], 404);
+            }
+
+            return response()->json(['message' => 'Rent reminder queued for delivery']);
+        } catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 400);
+        }
+    }
+
 }

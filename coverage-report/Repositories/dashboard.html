@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /home/kov/projects/propertymaster/app/Repositories</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../_css/bootstrap.min.css?v=11.0.9" rel="stylesheet" type="text/css">
+  <link href="../_css/nv.d3.min.css?v=11.0.9" rel="stylesheet" type="text/css">
+  <link href="../_css/style.css?v=11.0.9" rel="stylesheet" type="text/css">
+  <link href="../_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../index.html">/home/kov/projects/propertymaster/app</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Repositories</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="AuthRepository.php.html#12">App\Repositories\AuthRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="LeaseRepository.php.html#8">App\Repositories\LeaseRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PaymentRepository.php.html#8">App\Repositories\PaymentRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PropertyRepository.php.html#7">App\Repositories\PropertyRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TenantRepository.php.html#7">App\Repositories\TenantRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UnitRepository.php.html#8">App\Repositories\UnitRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserRepository.php.html#12">App\Repositories\UserRepository</a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="UserRepository.php.html#12">App\Repositories\UserRepository</a></td><td class="text-right">272</td></tr>
+       <tr><td><a href="UnitRepository.php.html#8">App\Repositories\UnitRepository</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="AuthRepository.php.html#12">App\Repositories\AuthRepository</a></td><td class="text-right">56</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="AuthRepository.php.html#20"><abbr title="App\Repositories\AuthRepository::register">register</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthRepository.php.html#33"><abbr title="App\Repositories\AuthRepository::findUserByEmail">findUserByEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthRepository.php.html#44"><abbr title="App\Repositories\AuthRepository::createPasswordResetToken">createPasswordResetToken</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AuthRepository.php.html#69"><abbr title="App\Repositories\AuthRepository::resetPassword">resetPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="LeaseRepository.php.html#12"><abbr title="App\Repositories\LeaseRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="LeaseRepository.php.html#17"><abbr title="App\Repositories\LeaseRepository::getAllLeases">getAllLeases</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="LeaseRepository.php.html#22"><abbr title="App\Repositories\LeaseRepository::getLeaseById">getLeaseById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="LeaseRepository.php.html#27"><abbr title="App\Repositories\LeaseRepository::createLease">createLease</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="LeaseRepository.php.html#32"><abbr title="App\Repositories\LeaseRepository::updateLease">updateLease</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="LeaseRepository.php.html#39"><abbr title="App\Repositories\LeaseRepository::deleteLease">deleteLease</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="LeaseRepository.php.html#44"><abbr title="App\Repositories\LeaseRepository::getLeasesByUnit">getLeasesByUnit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="LeaseRepository.php.html#49"><abbr title="App\Repositories\LeaseRepository::getLeasesByTenant">getLeasesByTenant</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="LeaseRepository.php.html#54"><abbr title="App\Repositories\LeaseRepository::getActiveLeases">getActiveLeases</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="LeaseRepository.php.html#59"><abbr title="App\Repositories\LeaseRepository::getExpiringLeases">getExpiringLeases</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PaymentRepository.php.html#12"><abbr title="App\Repositories\PaymentRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PaymentRepository.php.html#17"><abbr title="App\Repositories\PaymentRepository::getAllPayments">getAllPayments</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PaymentRepository.php.html#22"><abbr title="App\Repositories\PaymentRepository::getPaymentById">getPaymentById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PaymentRepository.php.html#27"><abbr title="App\Repositories\PaymentRepository::createPayment">createPayment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PaymentRepository.php.html#32"><abbr title="App\Repositories\PaymentRepository::updatePayment">updatePayment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PaymentRepository.php.html#39"><abbr title="App\Repositories\PaymentRepository::deletePayment">deletePayment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PaymentRepository.php.html#44"><abbr title="App\Repositories\PaymentRepository::getPaymentsByLease">getPaymentsByLease</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PaymentRepository.php.html#49"><abbr title="App\Repositories\PaymentRepository::getPaymentsByDateRange">getPaymentsByDateRange</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PaymentRepository.php.html#54"><abbr title="App\Repositories\PaymentRepository::getOutstandingPayments">getOutstandingPayments</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PropertyRepository.php.html#11"><abbr title="App\Repositories\PropertyRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PropertyRepository.php.html#16"><abbr title="App\Repositories\PropertyRepository::getAllProperties">getAllProperties</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PropertyRepository.php.html#21"><abbr title="App\Repositories\PropertyRepository::getPropertyById">getPropertyById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PropertyRepository.php.html#26"><abbr title="App\Repositories\PropertyRepository::createProperty">createProperty</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PropertyRepository.php.html#31"><abbr title="App\Repositories\PropertyRepository::updateProperty">updateProperty</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PropertyRepository.php.html#38"><abbr title="App\Repositories\PropertyRepository::deleteProperty">deleteProperty</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PropertyRepository.php.html#43"><abbr title="App\Repositories\PropertyRepository::getPropertiesByUser">getPropertiesByUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TenantRepository.php.html#11"><abbr title="App\Repositories\TenantRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TenantRepository.php.html#16"><abbr title="App\Repositories\TenantRepository::getAllTenants">getAllTenants</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TenantRepository.php.html#21"><abbr title="App\Repositories\TenantRepository::getTenantById">getTenantById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TenantRepository.php.html#26"><abbr title="App\Repositories\TenantRepository::createTenant">createTenant</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TenantRepository.php.html#31"><abbr title="App\Repositories\TenantRepository::updateTenant">updateTenant</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="TenantRepository.php.html#38"><abbr title="App\Repositories\TenantRepository::deleteTenant">deleteTenant</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UnitRepository.php.html#12"><abbr title="App\Repositories\UnitRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UnitRepository.php.html#17"><abbr title="App\Repositories\UnitRepository::getAllUnits">getAllUnits</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UnitRepository.php.html#22"><abbr title="App\Repositories\UnitRepository::getUnitById">getUnitById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UnitRepository.php.html#27"><abbr title="App\Repositories\UnitRepository::createUnit">createUnit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UnitRepository.php.html#32"><abbr title="App\Repositories\UnitRepository::updateUnit">updateUnit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UnitRepository.php.html#39"><abbr title="App\Repositories\UnitRepository::deleteUnit">deleteUnit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UnitRepository.php.html#44"><abbr title="App\Repositories\UnitRepository::getUnitsByProperty">getUnitsByProperty</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UnitRepository.php.html#49"><abbr title="App\Repositories\UnitRepository::getVacantUnits">getVacantUnits</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserRepository.php.html#21"><abbr title="App\Repositories\UserRepository::getAllPaginated">getAllPaginated</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserRepository.php.html#52"><abbr title="App\Repositories\UserRepository::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserRepository.php.html#83"><abbr title="App\Repositories\UserRepository::findById">findById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserRepository.php.html#94"><abbr title="App\Repositories\UserRepository::findByEmail">findByEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserRepository.php.html#105"><abbr title="App\Repositories\UserRepository::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserRepository.php.html#122"><abbr title="App\Repositories\UserRepository::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserRepository.php.html#146"><abbr title="App\Repositories\UserRepository::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserRepository.php.html#163"><abbr title="App\Repositories\UserRepository::getByRole">getByRole</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="AuthRepository.php.html#69"><abbr title="App\Repositories\AuthRepository::resetPassword">resetPassword</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="UserRepository.php.html#21"><abbr title="App\Repositories\UserRepository::getAllPaginated">getAllPaginated</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="UserRepository.php.html#52"><abbr title="App\Repositories\UserRepository::getAll">getAll</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="UserRepository.php.html#122"><abbr title="App\Repositories\UserRepository::update">update</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="UnitRepository.php.html#49"><abbr title="App\Repositories\UnitRepository::getVacantUnits">getVacantUnits</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="UserRepository.php.html#105"><abbr title="App\Repositories\UserRepository::create">create</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="UserRepository.php.html#146"><abbr title="App\Repositories\UserRepository::delete">delete</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 11.0.9</a> using <a href="https://www.php.net/" target="_top">PHP 8.3.6</a> and <a href="https://phpunit.de/">PHPUnit 11.5.15</a> at Fri May 9 10:35:23 UTC 2025.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../_js/jquery.min.js?v=11.0.9" type="text/javascript"></script>
+  <script src="../_js/d3.min.js?v=11.0.9" type="text/javascript"></script>
+  <script src="../_js/nv.d3.min.js?v=11.0.9" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([7,0,0,0,0,0,0,0,0,0,0,0], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([52,0,0,0,0,0,0,0,0,0,0,0], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,7,"<a href=\"AuthRepository.php.html#12\">App\\Repositories\\AuthRepository<\/a>"],[0,10,"<a href=\"LeaseRepository.php.html#8\">App\\Repositories\\LeaseRepository<\/a>"],[0,9,"<a href=\"PaymentRepository.php.html#8\">App\\Repositories\\PaymentRepository<\/a>"],[0,7,"<a href=\"PropertyRepository.php.html#7\">App\\Repositories\\PropertyRepository<\/a>"],[0,6,"<a href=\"TenantRepository.php.html#7\">App\\Repositories\\TenantRepository<\/a>"],[0,9,"<a href=\"UnitRepository.php.html#8\">App\\Repositories\\UnitRepository<\/a>"],[0,16,"<a href=\"UserRepository.php.html#12\">App\\Repositories\\UserRepository<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"AuthRepository.php.html#20\">App\\Repositories\\AuthRepository::register<\/a>"],[0,1,"<a href=\"AuthRepository.php.html#33\">App\\Repositories\\AuthRepository::findUserByEmail<\/a>"],[0,1,"<a href=\"AuthRepository.php.html#44\">App\\Repositories\\AuthRepository::createPasswordResetToken<\/a>"],[0,4,"<a href=\"AuthRepository.php.html#69\">App\\Repositories\\AuthRepository::resetPassword<\/a>"],[0,1,"<a href=\"LeaseRepository.php.html#12\">App\\Repositories\\LeaseRepository::__construct<\/a>"],[0,1,"<a href=\"LeaseRepository.php.html#17\">App\\Repositories\\LeaseRepository::getAllLeases<\/a>"],[0,1,"<a href=\"LeaseRepository.php.html#22\">App\\Repositories\\LeaseRepository::getLeaseById<\/a>"],[0,1,"<a href=\"LeaseRepository.php.html#27\">App\\Repositories\\LeaseRepository::createLease<\/a>"],[0,1,"<a href=\"LeaseRepository.php.html#32\">App\\Repositories\\LeaseRepository::updateLease<\/a>"],[0,1,"<a href=\"LeaseRepository.php.html#39\">App\\Repositories\\LeaseRepository::deleteLease<\/a>"],[0,1,"<a href=\"LeaseRepository.php.html#44\">App\\Repositories\\LeaseRepository::getLeasesByUnit<\/a>"],[0,1,"<a href=\"LeaseRepository.php.html#49\">App\\Repositories\\LeaseRepository::getLeasesByTenant<\/a>"],[0,1,"<a href=\"LeaseRepository.php.html#54\">App\\Repositories\\LeaseRepository::getActiveLeases<\/a>"],[0,1,"<a href=\"LeaseRepository.php.html#59\">App\\Repositories\\LeaseRepository::getExpiringLeases<\/a>"],[0,1,"<a href=\"PaymentRepository.php.html#12\">App\\Repositories\\PaymentRepository::__construct<\/a>"],[0,1,"<a href=\"PaymentRepository.php.html#17\">App\\Repositories\\PaymentRepository::getAllPayments<\/a>"],[0,1,"<a href=\"PaymentRepository.php.html#22\">App\\Repositories\\PaymentRepository::getPaymentById<\/a>"],[0,1,"<a href=\"PaymentRepository.php.html#27\">App\\Repositories\\PaymentRepository::createPayment<\/a>"],[0,1,"<a href=\"PaymentRepository.php.html#32\">App\\Repositories\\PaymentRepository::updatePayment<\/a>"],[0,1,"<a href=\"PaymentRepository.php.html#39\">App\\Repositories\\PaymentRepository::deletePayment<\/a>"],[0,1,"<a href=\"PaymentRepository.php.html#44\">App\\Repositories\\PaymentRepository::getPaymentsByLease<\/a>"],[0,1,"<a href=\"PaymentRepository.php.html#49\">App\\Repositories\\PaymentRepository::getPaymentsByDateRange<\/a>"],[0,1,"<a href=\"PaymentRepository.php.html#54\">App\\Repositories\\PaymentRepository::getOutstandingPayments<\/a>"],[0,1,"<a href=\"PropertyRepository.php.html#11\">App\\Repositories\\PropertyRepository::__construct<\/a>"],[0,1,"<a href=\"PropertyRepository.php.html#16\">App\\Repositories\\PropertyRepository::getAllProperties<\/a>"],[0,1,"<a href=\"PropertyRepository.php.html#21\">App\\Repositories\\PropertyRepository::getPropertyById<\/a>"],[0,1,"<a href=\"PropertyRepository.php.html#26\">App\\Repositories\\PropertyRepository::createProperty<\/a>"],[0,1,"<a href=\"PropertyRepository.php.html#31\">App\\Repositories\\PropertyRepository::updateProperty<\/a>"],[0,1,"<a href=\"PropertyRepository.php.html#38\">App\\Repositories\\PropertyRepository::deleteProperty<\/a>"],[0,1,"<a href=\"PropertyRepository.php.html#43\">App\\Repositories\\PropertyRepository::getPropertiesByUser<\/a>"],[0,1,"<a href=\"TenantRepository.php.html#11\">App\\Repositories\\TenantRepository::__construct<\/a>"],[0,1,"<a href=\"TenantRepository.php.html#16\">App\\Repositories\\TenantRepository::getAllTenants<\/a>"],[0,1,"<a href=\"TenantRepository.php.html#21\">App\\Repositories\\TenantRepository::getTenantById<\/a>"],[0,1,"<a href=\"TenantRepository.php.html#26\">App\\Repositories\\TenantRepository::createTenant<\/a>"],[0,1,"<a href=\"TenantRepository.php.html#31\">App\\Repositories\\TenantRepository::updateTenant<\/a>"],[0,1,"<a href=\"TenantRepository.php.html#38\">App\\Repositories\\TenantRepository::deleteTenant<\/a>"],[0,1,"<a href=\"UnitRepository.php.html#12\">App\\Repositories\\UnitRepository::__construct<\/a>"],[0,1,"<a href=\"UnitRepository.php.html#17\">App\\Repositories\\UnitRepository::getAllUnits<\/a>"],[0,1,"<a href=\"UnitRepository.php.html#22\">App\\Repositories\\UnitRepository::getUnitById<\/a>"],[0,1,"<a href=\"UnitRepository.php.html#27\">App\\Repositories\\UnitRepository::createUnit<\/a>"],[0,1,"<a href=\"UnitRepository.php.html#32\">App\\Repositories\\UnitRepository::updateUnit<\/a>"],[0,1,"<a href=\"UnitRepository.php.html#39\">App\\Repositories\\UnitRepository::deleteUnit<\/a>"],[0,1,"<a href=\"UnitRepository.php.html#44\">App\\Repositories\\UnitRepository::getUnitsByProperty<\/a>"],[0,2,"<a href=\"UnitRepository.php.html#49\">App\\Repositories\\UnitRepository::getVacantUnits<\/a>"],[0,3,"<a href=\"UserRepository.php.html#21\">App\\Repositories\\UserRepository::getAllPaginated<\/a>"],[0,3,"<a href=\"UserRepository.php.html#52\">App\\Repositories\\UserRepository::getAll<\/a>"],[0,1,"<a href=\"UserRepository.php.html#83\">App\\Repositories\\UserRepository::findById<\/a>"],[0,1,"<a href=\"UserRepository.php.html#94\">App\\Repositories\\UserRepository::findByEmail<\/a>"],[0,2,"<a href=\"UserRepository.php.html#105\">App\\Repositories\\UserRepository::create<\/a>"],[0,3,"<a href=\"UserRepository.php.html#122\">App\\Repositories\\UserRepository::update<\/a>"],[0,2,"<a href=\"UserRepository.php.html#146\">App\\Repositories\\UserRepository::delete<\/a>"],[0,1,"<a href=\"UserRepository.php.html#163\">App\\Repositories\\UserRepository::getByRole<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

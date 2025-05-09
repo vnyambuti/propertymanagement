@@ -17,7 +17,7 @@ A comprehensive real estate property management system built with Laravel, provi
 
 ## Overview
 
-This property management system is designed to streamline the process of managing real estate properties, from tenant applications and lease management to maintenance requests and payment tracking. The application provides a RESTful API built with Laravel, allowing for integration with various frontend applications or mobile apps.
+This property management system is designed to streamline the process of managing real estate properties, from tenant applications and lease management and payment tracking. The application provides a RESTful API built with Laravel, allowing for integration with various frontend applications or mobile apps.
 
 ## Features
 
@@ -25,9 +25,7 @@ This property management system is designed to streamline the process of managin
 - Property management (listing, categories, attributes)
 - Tenant management
 - Lease agreements and documents
-- Maintenance request tracking
 - Payment processing and invoicing
-- Reporting and analytics
 - Notification system
 
 ## Setup Instructions
@@ -97,23 +95,6 @@ php artisan serve
 
 The application should now be running at `http://localhost:8000`.
 
-### Docker Setup (Alternative)
-
-1. **Make sure Docker and Docker Compose are installed**
-
-2. **Build and start Docker containers**
-
-```bash
-docker-compose up -d
-```
-
-3. **Run migrations and seeders inside the container**
-
-```bash
-docker-compose exec app php artisan migrate --seed
-```
-
-The application will be accessible at `http://localhost:8080`.
 
 ## API Documentation
 
@@ -145,9 +126,8 @@ The API uses JWT (JSON Web Tokens) for authentication:
 | Properties | GET /api/properties, POST /api/properties, GET /api/properties/{id}, PUT /api/properties/{id}, DELETE /api/properties/{id} |
 | Tenants | GET /api/tenants, POST /api/tenants, GET /api/tenants/{id}, PUT /api/tenants/{id}, DELETE /api/tenants/{id} |
 | Leases | GET /api/leases, POST /api/leases, GET /api/leases/{id}, PUT /api/leases/{id}, DELETE /api/leases/{id} |
-| Maintenance | GET /api/maintenance-requests, POST /api/maintenance-requests, GET /api/maintenance-requests/{id}, PUT /api/maintenance-requests/{id} |
 | Payments | GET /api/payments, POST /api/payments, GET /api/payments/{id} |
-| Reports | GET /api/reports/occupancy, GET /api/reports/revenue, GET /api/reports/maintenance |
+
 
 ## Architecture Overview
 
@@ -185,7 +165,9 @@ app/
 │   ├── Controllers/  # API and web controllers
 │   ├── Middleware/   # Request middleware
 │   └── Resources/    # API resource transformers
-├── Models/           # Eloquent models
+├── Domain/
+│   └── Property/
+|       └──Models/    #Entities
 ├── Providers/        # Service providers
 ├── Repositories/     # Data access layer
 ├── Services/         # Business logic

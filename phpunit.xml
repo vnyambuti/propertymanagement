@@ -12,6 +12,15 @@
             <directory>tests/Feature</directory>
         </testsuite>
     </testsuites>
+       <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">./app</directory>
+        </include>
+        <report>
+            <html outputDirectory="./coverage-report"/>
+            <clover outputFile="./coverage.xml"/>
+        </report>
+    </coverage>
     <source>
         <include>
             <directory>app</directory>
@@ -22,7 +31,6 @@
         <env name="APP_MAINTENANCE_DRIVER" value="file"/>
         <env name="BCRYPT_ROUNDS" value="4"/>
         <env name="CACHE_STORE" value="array"/>
-        <env name="DB_CONNECTION" value="mysql"/>
         <env name="DB_DATABASE" value="propertytest"/>
          <env name="DB_USERNAME" value="vic"/>
     <env name="DB_PASSWORD" value="nuski9000"/>

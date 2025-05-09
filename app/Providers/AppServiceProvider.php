@@ -49,17 +49,16 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(\App\Services\PaymentService::class, function ($app) {
             return new \App\Services\PaymentService(
                 $app->make(\App\Repositories\Interfaces\PaymentRepositoryInterface::class),
-                $app->make(\App\Repositories\Interfaces\LeaseRepositoryInterface::class)
+                $app->make(\App\Repositories\Interfaces\LeaseRepositoryInterface::class),
+                $app->make(\App\Repositories\Interfaces\TenantRepositoryInterface::class),
+                $app->make(\App\Repositories\Interfaces\UnitRepositoryInterface::class),
+                $app->make(\App\Repositories\Interfaces\PropertyRepositoryInterface::class),
             );
         });
         $this->app->bind(AuthRepositoryInterface::class, AuthRepository::class);
         $this->app->bind(AuthServiceInterface::class, AuthService::class);
         $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
         $this->app->bind(UserServiceInterface::class, UserService::class);
-        if ($this->app->environment('local') && class_exists(\Laravel\Telescope\TelescopeServiceProvider::class)) {
-            $this->app->register(\Laravel\Telescope\TelescopeServiceProvider::class);
-            $this->app->register(TelescopeServiceProvider::class);
-        }
 
     }
 

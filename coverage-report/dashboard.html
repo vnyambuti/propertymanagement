@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /home/kov/projects/propertymaster/app</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="_css/bootstrap.min.css?v=11.0.9" rel="stylesheet" type="text/css">
+  <link href="_css/nv.d3.min.css?v=11.0.9" rel="stylesheet" type="text/css">
+  <link href="_css/style.css?v=11.0.9" rel="stylesheet" type="text/css">
+  <link href="_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="index.html">/home/kov/projects/propertymaster/app</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Domain/Property/Models/Lease.php.html#14">App\Domain\Property\Models\Lease</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Payment.php.html#10">App\Domain\Property\Models\Payment</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Property.php.html#11">App\Domain\Property\Models\Property</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Tenant.php.html#13">App\Domain\Property\Models\Tenant</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Unit.php.html#11">App\Domain\Property\Models\Unit</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/User.php.html#13">App\Domain\Property\Models\User</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Auth/AuthController.php.html#11">App\Http\Controllers\Api\v1\Auth\AuthController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Lease/LeaseController.php.html#11">App\Http\Controllers\Api\v1\Lease\LeaseController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Payment/PaymentController.php.html#11">App\Http\Controllers\Api\v1\Payment\PaymentController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Tenant/TenantController.php.html#14">App\Http\Controllers\Api\v1\Tenant\TenantController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Unit/UnitController.php.html#12">App\Http\Controllers\Api\v1\Unit\UnitController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/User/UserController.php.html#12">App\Http\Controllers\Api\v1\User\UserController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/AdminMiddleware.php.html#10">App\Http\Middleware\AdminMiddleware</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/RoleMiddleware.php.html#10">App\Http\Middleware\RoleMiddleware</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Jobs/SendPaymentReceipt.php.html#14">App\Jobs\SendPaymentReceipt</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Jobs/SendRentReminderJob.php.html#16">App\Jobs\SendRentReminderJob</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Mail/PasswordResetMail.php.html#12">App\Mail\PasswordResetMail</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Mail/PaymentReceipt.php.html#11">App\Mail\PaymentReceipt</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Mail/RentReminderMail.php.html#13">App\Mail\RentReminderMail</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/AuthRepository.php.html#12">App\Repositories\AuthRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/LeaseRepository.php.html#8">App\Repositories\LeaseRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/PaymentRepository.php.html#8">App\Repositories\PaymentRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/PropertyRepository.php.html#7">App\Repositories\PropertyRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/TenantRepository.php.html#7">App\Repositories\TenantRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/UnitRepository.php.html#8">App\Repositories\UnitRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/UserRepository.php.html#12">App\Repositories\UserRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/AuthService.php.html#17">App\Services\AuthService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/LeaseService.php.html#7">App\Services\LeaseService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/PaymentService.php.html#17">App\Services\PaymentService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/PropertyService.php.html#6">App\Services\PropertyService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/RentReminderService.php.html#10">App\Services\RentReminderService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/TenantService.php.html#6">App\Services\TenantService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/UnitService.php.html#6">App\Services\UnitService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/UserService.php.html#15">App\Services\UserService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Console/Commands/SendRentRemindersCommand.php.html#8">App\Console\Commands\SendRentRemindersCommand</a></td><td class="text-right">22%</td></tr>
+       <tr><td><a href="Providers/AppServiceProvider.php.html#16">App\Providers\AppServiceProvider</a></td><td class="text-right">39%</td></tr>
+       <tr><td><a href="Providers/CacheServiceProvider.php.html#11">App\Providers\CacheServiceProvider</a></td><td class="text-right">41%</td></tr>
+       <tr><td><a href="Providers/RouteServiceProvider.php.html#9">App\Providers\RouteServiceProvider</a></td><td class="text-right">75%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Http/Controllers/Api/v1/User/UserController.php.html#12">App\Http\Controllers\Api\v1\User\UserController</a></td><td class="text-right">1406</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Payment/PaymentController.php.html#11">App\Http\Controllers\Api\v1\Payment\PaymentController</a></td><td class="text-right">600</td></tr>
+       <tr><td><a href="Services/UserService.php.html#15">App\Services\UserService</a></td><td class="text-right">380</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Lease/LeaseController.php.html#11">App\Http\Controllers\Api\v1\Lease\LeaseController</a></td><td class="text-right">342</td></tr>
+       <tr><td><a href="Repositories/UserRepository.php.html#12">App\Repositories\UserRepository</a></td><td class="text-right">272</td></tr>
+       <tr><td><a href="Services/PaymentService.php.html#17">App\Services\PaymentService</a></td><td class="text-right">272</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Auth/AuthController.php.html#11">App\Http\Controllers\Api\v1\Auth\AuthController</a></td><td class="text-right">240</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Tenant/TenantController.php.html#14">App\Http\Controllers\Api\v1\Tenant\TenantController</a></td><td class="text-right">240</td></tr>
+       <tr><td><a href="Services/LeaseService.php.html#7">App\Services\LeaseService</a></td><td class="text-right">210</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Unit/UnitController.php.html#12">App\Http\Controllers\Api\v1\Unit\UnitController</a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="Repositories/UnitRepository.php.html#8">App\Repositories\UnitRepository</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="Services/AuthService.php.html#17">App\Services\AuthService</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="Services/RentReminderService.php.html#10">App\Services\RentReminderService</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="Repositories/AuthRepository.php.html#12">App\Repositories\AuthRepository</a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Domain/Property/Models/User.php.html#13">App\Domain\Property\Models\User</a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Jobs/SendRentReminderJob.php.html#16">App\Jobs\SendRentReminderJob</a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Providers/CacheServiceProvider.php.html#11">App\Providers\CacheServiceProvider</a></td><td class="text-right">13</td></tr>
+       <tr><td><a href="Http/Middleware/AdminMiddleware.php.html#10">App\Http\Middleware\AdminMiddleware</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Middleware/RoleMiddleware.php.html#10">App\Http\Middleware\RoleMiddleware</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Jobs/SendPaymentReceipt.php.html#14">App\Jobs\SendPaymentReceipt</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Console/Commands/SendRentRemindersCommand.php.html#8">App\Console\Commands\SendRentRemindersCommand</a></td><td class="text-right">7</td></tr>
+       <tr><td><a href="Providers/AppServiceProvider.php.html#16">App\Providers\AppServiceProvider</a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="Providers/RouteServiceProvider.php.html#9">App\Providers\RouteServiceProvider</a></td><td class="text-right">3</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Console/Commands/SendRentRemindersCommand.php.html#49"><abbr title="App\Console\Commands\SendRentRemindersCommand::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Lease.php.html#47"><abbr title="App\Domain\Property\Models\Lease::unit">unit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Lease.php.html#55"><abbr title="App\Domain\Property\Models\Lease::tenant">tenant</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Lease.php.html#63"><abbr title="App\Domain\Property\Models\Lease::payments">payments</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Lease.php.html#71"><abbr title="App\Domain\Property\Models\Lease::scopeActive">scopeActive</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Lease.php.html#79"><abbr title="App\Domain\Property\Models\Lease::isActive">isActive</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Lease.php.html#87"><abbr title="App\Domain\Property\Models\Lease::getTotalPaidAttribute">getTotalPaidAttribute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Lease.php.html#95"><abbr title="App\Domain\Property\Models\Lease::getDurationMonthsAttribute">getDurationMonthsAttribute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Lease.php.html#99"><abbr title="App\Domain\Property\Models\Lease::newFactory">newFactory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Payment.php.html#42"><abbr title="App\Domain\Property\Models\Payment::lease">lease</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Payment.php.html#50"><abbr title="App\Domain\Property\Models\Payment::scopeCompleted">scopeCompleted</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Payment.php.html#58"><abbr title="App\Domain\Property\Models\Payment::isCompleted">isCompleted</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Payment.php.html#63"><abbr title="App\Domain\Property\Models\Payment::newFactory">newFactory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Property.php.html#32"><abbr title="App\Domain\Property\Models\Property::user">user</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Property.php.html#40"><abbr title="App\Domain\Property\Models\Property::units">units</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Property.php.html#45"><abbr title="App\Domain\Property\Models\Property::newFactory">newFactory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Tenant.php.html#33"><abbr title="App\Domain\Property\Models\Tenant::leases">leases</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Tenant.php.html#41"><abbr title="App\Domain\Property\Models\Tenant::activeLease">activeLease</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Tenant.php.html#51"><abbr title="App\Domain\Property\Models\Tenant::getFullNameAttribute">getFullNameAttribute</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Tenant.php.html#56"><abbr title="App\Domain\Property\Models\Tenant::newFactory">newFactory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Unit.php.html#33"><abbr title="App\Domain\Property\Models\Unit::property">property</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Unit.php.html#41"><abbr title="App\Domain\Property\Models\Unit::leases">leases</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Unit.php.html#49"><abbr title="App\Domain\Property\Models\Unit::activeLease">activeLease</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/Unit.php.html#54"><abbr title="App\Domain\Property\Models\Unit::newFactory">newFactory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/User.php.html#45"><abbr title="App\Domain\Property\Models\User::casts">casts</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/User.php.html#55"><abbr title="App\Domain\Property\Models\User::properties">properties</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/User.php.html#63"><abbr title="App\Domain\Property\Models\User::isAdmin">isAdmin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/User.php.html#71"><abbr title="App\Domain\Property\Models\User::isManager">isManager</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Domain/Property/Models/User.php.html#76"><abbr title="App\Domain\Property\Models\User::newFactory">newFactory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Auth/AuthController.php.html#20"><abbr title="App\Http\Controllers\Api\v1\Auth\AuthController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Auth/AuthController.php.html#31"><abbr title="App\Http\Controllers\Api\v1\Auth\AuthController::register">register</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Auth/AuthController.php.html#70"><abbr title="App\Http\Controllers\Api\v1\Auth\AuthController::login">login</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Auth/AuthController.php.html#109"><abbr title="App\Http\Controllers\Api\v1\Auth\AuthController::logout">logout</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Auth/AuthController.php.html#124"><abbr title="App\Http\Controllers\Api\v1\Auth\AuthController::forgotPassword">forgotPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Auth/AuthController.php.html#156"><abbr title="App\Http\Controllers\Api\v1\Auth\AuthController::resetPassword">resetPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Auth/AuthController.php.html#190"><abbr title="App\Http\Controllers\Api\v1\Auth\AuthController::user">user</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Lease/LeaseController.php.html#20"><abbr title="App\Http\Controllers\Api\v1\Lease\LeaseController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Lease/LeaseController.php.html#32"><abbr title="App\Http\Controllers\Api\v1\Lease\LeaseController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Lease/LeaseController.php.html#46"><abbr title="App\Http\Controllers\Api\v1\Lease\LeaseController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Lease/LeaseController.php.html#63"><abbr title="App\Http\Controllers\Api\v1\Lease\LeaseController::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Lease/LeaseController.php.html#91"><abbr title="App\Http\Controllers\Api\v1\Lease\LeaseController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Lease/LeaseController.php.html#119"><abbr title="App\Http\Controllers\Api\v1\Lease\LeaseController::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Lease/LeaseController.php.html#137"><abbr title="App\Http\Controllers\Api\v1\Lease\LeaseController::getLeasesByUnit">getLeasesByUnit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Lease/LeaseController.php.html#152"><abbr title="App\Http\Controllers\Api\v1\Lease\LeaseController::getLeasesByTenant">getLeasesByTenant</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Lease/LeaseController.php.html#166"><abbr title="App\Http\Controllers\Api\v1\Lease\LeaseController::getActiveLeases">getActiveLeases</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Lease/LeaseController.php.html#180"><abbr title="App\Http\Controllers\Api\v1\Lease\LeaseController::getExpiringLeases">getExpiringLeases</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Lease/LeaseController.php.html#196"><abbr title="App\Http\Controllers\Api\v1\Lease\LeaseController::terminateLease">terminateLease</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Lease/LeaseController.php.html#218"><abbr title="App\Http\Controllers\Api\v1\Lease\LeaseController::renewLease">renewLease</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Payment/PaymentController.php.html#21"><abbr title="App\Http\Controllers\Api\v1\Payment\PaymentController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Payment/PaymentController.php.html#34"><abbr title="App\Http\Controllers\Api\v1\Payment\PaymentController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Payment/PaymentController.php.html#48"><abbr title="App\Http\Controllers\Api\v1\Payment\PaymentController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Payment/PaymentController.php.html#65"><abbr title="App\Http\Controllers\Api\v1\Payment\PaymentController::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Payment/PaymentController.php.html#91"><abbr title="App\Http\Controllers\Api\v1\Payment\PaymentController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Payment/PaymentController.php.html#118"><abbr title="App\Http\Controllers\Api\v1\Payment\PaymentController::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Payment/PaymentController.php.html#136"><abbr title="App\Http\Controllers\Api\v1\Payment\PaymentController::getPaymentsByLease">getPaymentsByLease</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Payment/PaymentController.php.html#150"><abbr title="App\Http\Controllers\Api\v1\Payment\PaymentController::getPaymentsByDateRange">getPaymentsByDateRange</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Payment/PaymentController.php.html#173"><abbr title="App\Http\Controllers\Api\v1\Payment\PaymentController::getOutstandingPayments">getOutstandingPayments</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Payment/PaymentController.php.html#187"><abbr title="App\Http\Controllers\Api\v1\Payment\PaymentController::markPaymentAsCompleted">markPaymentAsCompleted</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Payment/PaymentController.php.html#210"><abbr title="App\Http\Controllers\Api\v1\Payment\PaymentController::generateRentInvoice">generateRentInvoice</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Payment/PaymentController.php.html#230"><abbr title="App\Http\Controllers\Api\v1\Payment\PaymentController::sendPaymentReceipt">sendPaymentReceipt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Payment/PaymentController.php.html#252"><abbr title="App\Http\Controllers\Api\v1\Payment\PaymentController::sendRentReminder">sendRentReminder</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Tenant/TenantController.php.html#18"><abbr title="App\Http\Controllers\Api\v1\Tenant\TenantController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Tenant/TenantController.php.html#29"><abbr title="App\Http\Controllers\Api\v1\Tenant\TenantController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Tenant/TenantController.php.html#55"><abbr title="App\Http\Controllers\Api\v1\Tenant\TenantController::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Tenant/TenantController.php.html#92"><abbr title="App\Http\Controllers\Api\v1\Tenant\TenantController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Tenant/TenantController.php.html#120"><abbr title="App\Http\Controllers\Api\v1\Tenant\TenantController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Tenant/TenantController.php.html#169"><abbr title="App\Http\Controllers\Api\v1\Tenant\TenantController::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Tenant/TenantController.php.html#195"><abbr title="App\Http\Controllers\Api\v1\Tenant\TenantController::trackCacheKey">trackCacheKey</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Tenant/TenantController.php.html#207"><abbr title="App\Http\Controllers\Api\v1\Tenant\TenantController::clearTenantsCache">clearTenantsCache</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Unit/UnitController.php.html#16"><abbr title="App\Http\Controllers\Api\v1\Unit\UnitController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Unit/UnitController.php.html#27"><abbr title="App\Http\Controllers\Api\v1\Unit\UnitController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Unit/UnitController.php.html#44"><abbr title="App\Http\Controllers\Api\v1\Unit\UnitController::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Unit/UnitController.php.html#78"><abbr title="App\Http\Controllers\Api\v1\Unit\UnitController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Unit/UnitController.php.html#102"><abbr title="App\Http\Controllers\Api\v1\Unit\UnitController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Unit/UnitController.php.html#145"><abbr title="App\Http\Controllers\Api\v1\Unit\UnitController::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Unit/UnitController.php.html#171"><abbr title="App\Http\Controllers\Api\v1\Unit\UnitController::getUnitsByProperty">getUnitsByProperty</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Unit/UnitController.php.html#188"><abbr title="App\Http\Controllers\Api\v1\Unit\UnitController::getVacantUnits">getVacantUnits</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/User/UserController.php.html#21"><abbr title="App\Http\Controllers\Api\v1\User\UserController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/User/UserController.php.html#33"><abbr title="App\Http\Controllers\Api\v1\User\UserController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/User/UserController.php.html#61"><abbr title="App\Http\Controllers\Api\v1\User\UserController::all">all</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/User/UserController.php.html#89"><abbr title="App\Http\Controllers\Api\v1\User\UserController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/User/UserController.php.html#115"><abbr title="App\Http\Controllers\Api\v1\User\UserController::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/User/UserController.php.html#164"><abbr title="App\Http\Controllers\Api\v1\User\UserController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/User/UserController.php.html#244"><abbr title="App\Http\Controllers\Api\v1\User\UserController::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/User/UserController.php.html#287"><abbr title="App\Http\Controllers\Api\v1\User\UserController::changePassword">changePassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/User/UserController.php.html#339"><abbr title="App\Http\Controllers\Api\v1\User\UserController::getByRole">getByRole</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/AdminMiddleware.php.html#17"><abbr title="App\Http\Middleware\AdminMiddleware::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/RoleMiddleware.php.html#17"><abbr title="App\Http\Middleware\RoleMiddleware::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Jobs/SendPaymentReceipt.php.html#27"><abbr title="App\Jobs\SendPaymentReceipt::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Jobs/SendPaymentReceipt.php.html#39"><abbr title="App\Jobs\SendPaymentReceipt::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Jobs/SendRentReminderJob.php.html#30"><abbr title="App\Jobs\SendRentReminderJob::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Jobs/SendRentReminderJob.php.html#41"><abbr title="App\Jobs\SendRentReminderJob::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Mail/PasswordResetMail.php.html#22"><abbr title="App\Mail\PasswordResetMail::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Mail/PasswordResetMail.php.html#30"><abbr title="App\Mail\PasswordResetMail::envelope">envelope</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Mail/PasswordResetMail.php.html#40"><abbr title="App\Mail\PasswordResetMail::content">content</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Mail/PasswordResetMail.php.html#52"><abbr title="App\Mail\PasswordResetMail::attachments">attachments</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Mail/PaymentReceipt.php.html#23"><abbr title="App\Mail\PaymentReceipt::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Mail/PaymentReceipt.php.html#34"><abbr title="App\Mail\PaymentReceipt::envelope">envelope</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Mail/PaymentReceipt.php.html#44"><abbr title="App\Mail\PaymentReceipt::content">content</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Mail/PaymentReceipt.php.html#56"><abbr title="App\Mail\PaymentReceipt::attachments">attachments</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Mail/RentReminderMail.php.html#27"><abbr title="App\Mail\RentReminderMail::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Mail/RentReminderMail.php.html#38"><abbr title="App\Mail\RentReminderMail::build">build</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/CacheServiceProvider.php.html#60"><abbr title="App\Providers\CacheServiceProvider::clearPropertyCache">clearPropertyCache</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/CacheServiceProvider.php.html#74"><abbr title="App\Providers\CacheServiceProvider::clearTenantCache">clearTenantCache</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/AuthRepository.php.html#20"><abbr title="App\Repositories\AuthRepository::register">register</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/AuthRepository.php.html#33"><abbr title="App\Repositories\AuthRepository::findUserByEmail">findUserByEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/AuthRepository.php.html#44"><abbr title="App\Repositories\AuthRepository::createPasswordResetToken">createPasswordResetToken</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/AuthRepository.php.html#69"><abbr title="App\Repositories\AuthRepository::resetPassword">resetPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/LeaseRepository.php.html#12"><abbr title="App\Repositories\LeaseRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/LeaseRepository.php.html#17"><abbr title="App\Repositories\LeaseRepository::getAllLeases">getAllLeases</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/LeaseRepository.php.html#22"><abbr title="App\Repositories\LeaseRepository::getLeaseById">getLeaseById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/LeaseRepository.php.html#27"><abbr title="App\Repositories\LeaseRepository::createLease">createLease</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/LeaseRepository.php.html#32"><abbr title="App\Repositories\LeaseRepository::updateLease">updateLease</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/LeaseRepository.php.html#39"><abbr title="App\Repositories\LeaseRepository::deleteLease">deleteLease</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/LeaseRepository.php.html#44"><abbr title="App\Repositories\LeaseRepository::getLeasesByUnit">getLeasesByUnit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/LeaseRepository.php.html#49"><abbr title="App\Repositories\LeaseRepository::getLeasesByTenant">getLeasesByTenant</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/LeaseRepository.php.html#54"><abbr title="App\Repositories\LeaseRepository::getActiveLeases">getActiveLeases</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/LeaseRepository.php.html#59"><abbr title="App\Repositories\LeaseRepository::getExpiringLeases">getExpiringLeases</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/PaymentRepository.php.html#12"><abbr title="App\Repositories\PaymentRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/PaymentRepository.php.html#17"><abbr title="App\Repositories\PaymentRepository::getAllPayments">getAllPayments</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/PaymentRepository.php.html#22"><abbr title="App\Repositories\PaymentRepository::getPaymentById">getPaymentById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/PaymentRepository.php.html#27"><abbr title="App\Repositories\PaymentRepository::createPayment">createPayment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/PaymentRepository.php.html#32"><abbr title="App\Repositories\PaymentRepository::updatePayment">updatePayment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/PaymentRepository.php.html#39"><abbr title="App\Repositories\PaymentRepository::deletePayment">deletePayment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/PaymentRepository.php.html#44"><abbr title="App\Repositories\PaymentRepository::getPaymentsByLease">getPaymentsByLease</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/PaymentRepository.php.html#49"><abbr title="App\Repositories\PaymentRepository::getPaymentsByDateRange">getPaymentsByDateRange</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/PaymentRepository.php.html#54"><abbr title="App\Repositories\PaymentRepository::getOutstandingPayments">getOutstandingPayments</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/PropertyRepository.php.html#11"><abbr title="App\Repositories\PropertyRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/PropertyRepository.php.html#16"><abbr title="App\Repositories\PropertyRepository::getAllProperties">getAllProperties</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/PropertyRepository.php.html#21"><abbr title="App\Repositories\PropertyRepository::getPropertyById">getPropertyById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/PropertyRepository.php.html#26"><abbr title="App\Repositories\PropertyRepository::createProperty">createProperty</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/PropertyRepository.php.html#31"><abbr title="App\Repositories\PropertyRepository::updateProperty">updateProperty</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/PropertyRepository.php.html#38"><abbr title="App\Repositories\PropertyRepository::deleteProperty">deleteProperty</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/PropertyRepository.php.html#43"><abbr title="App\Repositories\PropertyRepository::getPropertiesByUser">getPropertiesByUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/TenantRepository.php.html#11"><abbr title="App\Repositories\TenantRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/TenantRepository.php.html#16"><abbr title="App\Repositories\TenantRepository::getAllTenants">getAllTenants</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/TenantRepository.php.html#21"><abbr title="App\Repositories\TenantRepository::getTenantById">getTenantById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/TenantRepository.php.html#26"><abbr title="App\Repositories\TenantRepository::createTenant">createTenant</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/TenantRepository.php.html#31"><abbr title="App\Repositories\TenantRepository::updateTenant">updateTenant</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/TenantRepository.php.html#38"><abbr title="App\Repositories\TenantRepository::deleteTenant">deleteTenant</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/UnitRepository.php.html#12"><abbr title="App\Repositories\UnitRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/UnitRepository.php.html#17"><abbr title="App\Repositories\UnitRepository::getAllUnits">getAllUnits</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/UnitRepository.php.html#22"><abbr title="App\Repositories\UnitRepository::getUnitById">getUnitById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/UnitRepository.php.html#27"><abbr title="App\Repositories\UnitRepository::createUnit">createUnit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/UnitRepository.php.html#32"><abbr title="App\Repositories\UnitRepository::updateUnit">updateUnit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/UnitRepository.php.html#39"><abbr title="App\Repositories\UnitRepository::deleteUnit">deleteUnit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/UnitRepository.php.html#44"><abbr title="App\Repositories\UnitRepository::getUnitsByProperty">getUnitsByProperty</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/UnitRepository.php.html#49"><abbr title="App\Repositories\UnitRepository::getVacantUnits">getVacantUnits</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/UserRepository.php.html#21"><abbr title="App\Repositories\UserRepository::getAllPaginated">getAllPaginated</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/UserRepository.php.html#52"><abbr title="App\Repositories\UserRepository::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/UserRepository.php.html#83"><abbr title="App\Repositories\UserRepository::findById">findById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/UserRepository.php.html#94"><abbr title="App\Repositories\UserRepository::findByEmail">findByEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/UserRepository.php.html#105"><abbr title="App\Repositories\UserRepository::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/UserRepository.php.html#122"><abbr title="App\Repositories\UserRepository::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/UserRepository.php.html#146"><abbr title="App\Repositories\UserRepository::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repositories/UserRepository.php.html#163"><abbr title="App\Repositories\UserRepository::getByRole">getByRole</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/AuthService.php.html#26"><abbr title="App\Services\AuthService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/AuthService.php.html#37"><abbr title="App\Services\AuthService::register">register</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/AuthService.php.html#62"><abbr title="App\Services\AuthService::login">login</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/AuthService.php.html#89"><abbr title="App\Services\AuthService::logout">logout</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/AuthService.php.html#103"><abbr title="App\Services\AuthService::forgotPassword">forgotPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/AuthService.php.html#127"><abbr title="App\Services\AuthService::resetPassword">resetPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/LeaseService.php.html#12"><abbr title="App\Services\LeaseService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/LeaseService.php.html#20"><abbr title="App\Services\LeaseService::getAllLeases">getAllLeases</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/LeaseService.php.html#25"><abbr title="App\Services\LeaseService::getLeaseById">getLeaseById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/LeaseService.php.html#30"><abbr title="App\Services\LeaseService::createLease">createLease</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/LeaseService.php.html#43"><abbr title="App\Services\LeaseService::updateLease">updateLease</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/LeaseService.php.html#48"><abbr title="App\Services\LeaseService::deleteLease">deleteLease</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/LeaseService.php.html#53"><abbr title="App\Services\LeaseService::getLeasesByUnit">getLeasesByUnit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/LeaseService.php.html#58"><abbr title="App\Services\LeaseService::getLeasesByTenant">getLeasesByTenant</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/LeaseService.php.html#63"><abbr title="App\Services\LeaseService::getActiveLeases">getActiveLeases</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/LeaseService.php.html#68"><abbr title="App\Services\LeaseService::getExpiringLeases">getExpiringLeases</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/LeaseService.php.html#73"><abbr title="App\Services\LeaseService::terminateLease">terminateLease</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/LeaseService.php.html#81"><abbr title="App\Services\LeaseService::renewLease">renewLease</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/PaymentService.php.html#25"><abbr title="App\Services\PaymentService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/PaymentService.php.html#41"><abbr title="App\Services\PaymentService::getAllPayments">getAllPayments</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/PaymentService.php.html#46"><abbr title="App\Services\PaymentService::getPaymentById">getPaymentById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/PaymentService.php.html#51"><abbr title="App\Services\PaymentService::createPayment">createPayment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/PaymentService.php.html#62"><abbr title="App\Services\PaymentService::updatePayment">updatePayment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/PaymentService.php.html#67"><abbr title="App\Services\PaymentService::deletePayment">deletePayment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/PaymentService.php.html#72"><abbr title="App\Services\PaymentService::getPaymentsByLease">getPaymentsByLease</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/PaymentService.php.html#77"><abbr title="App\Services\PaymentService::getPaymentsByDateRange">getPaymentsByDateRange</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/PaymentService.php.html#82"><abbr title="App\Services\PaymentService::getOutstandingPayments">getOutstandingPayments</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/PaymentService.php.html#87"><abbr title="App\Services\PaymentService::markPaymentAsCompleted">markPaymentAsCompleted</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/PaymentService.php.html#95"><abbr title="App\Services\PaymentService::generateRentInvoice">generateRentInvoice</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/PaymentService.php.html#115"><abbr title="App\Services\PaymentService::sendPaymentReceipt">sendPaymentReceipt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/PropertyService.php.html#10"><abbr title="App\Services\PropertyService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/PropertyService.php.html#15"><abbr title="App\Services\PropertyService::getAllProperties">getAllProperties</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/PropertyService.php.html#20"><abbr title="App\Services\PropertyService::getPropertyById">getPropertyById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/PropertyService.php.html#25"><abbr title="App\Services\PropertyService::createProperty">createProperty</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/PropertyService.php.html#30"><abbr title="App\Services\PropertyService::updateProperty">updateProperty</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/PropertyService.php.html#35"><abbr title="App\Services\PropertyService::deleteProperty">deleteProperty</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/PropertyService.php.html#40"><abbr title="App\Services\PropertyService::getPropertiesByUser">getPropertiesByUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/RentReminderService.php.html#18"><abbr title="App\Services\RentReminderService::scheduleUpcomingRentReminders">scheduleUpcomingRentReminders</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/RentReminderService.php.html#60"><abbr title="App\Services\RentReminderService::sendReminderForPayment">sendReminderForPayment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/TenantService.php.html#10"><abbr title="App\Services\TenantService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/TenantService.php.html#15"><abbr title="App\Services\TenantService::getAllTenants">getAllTenants</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/TenantService.php.html#20"><abbr title="App\Services\TenantService::getTenantById">getTenantById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/TenantService.php.html#25"><abbr title="App\Services\TenantService::createTenant">createTenant</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/TenantService.php.html#30"><abbr title="App\Services\TenantService::updateTenant">updateTenant</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/TenantService.php.html#35"><abbr title="App\Services\TenantService::deleteTenant">deleteTenant</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/UnitService.php.html#10"><abbr title="App\Services\UnitService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/UnitService.php.html#15"><abbr title="App\Services\UnitService::getAllUnits">getAllUnits</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/UnitService.php.html#20"><abbr title="App\Services\UnitService::getUnitById">getUnitById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/UnitService.php.html#25"><abbr title="App\Services\UnitService::createUnit">createUnit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/UnitService.php.html#30"><abbr title="App\Services\UnitService::updateUnit">updateUnit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/UnitService.php.html#35"><abbr title="App\Services\UnitService::deleteUnit">deleteUnit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/UnitService.php.html#40"><abbr title="App\Services\UnitService::getUnitsByProperty">getUnitsByProperty</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/UnitService.php.html#45"><abbr title="App\Services\UnitService::getVacantUnits">getVacantUnits</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/UserService.php.html#24"><abbr title="App\Services\UserService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/UserService.php.html#36"><abbr title="App\Services\UserService::getPaginatedUsers">getPaginatedUsers</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/UserService.php.html#47"><abbr title="App\Services\UserService::getAllUsers">getAllUsers</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/UserService.php.html#58"><abbr title="App\Services\UserService::getUserById">getUserById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/UserService.php.html#69"><abbr title="App\Services\UserService::createUser">createUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/UserService.php.html#94"><abbr title="App\Services\UserService::updateUser">updateUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/UserService.php.html#124"><abbr title="App\Services\UserService::deleteUser">deleteUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/UserService.php.html#143"><abbr title="App\Services\UserService::getUsersByRole">getUsersByRole</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/UserService.php.html#157"><abbr title="App\Services\UserService::changePassword">changePassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/AppServiceProvider.php.html#68"><abbr title="App\Providers\AppServiceProvider::boot">boot</abbr></a></td><td class="text-right">28%</td></tr>
+       <tr><td><a href="Providers/AppServiceProvider.php.html#21"><abbr title="App\Providers\AppServiceProvider::register">register</abbr></a></td><td class="text-right">41%</td></tr>
+       <tr><td><a href="Providers/CacheServiceProvider.php.html#24"><abbr title="App\Providers\CacheServiceProvider::boot">boot</abbr></a></td><td class="text-right">54%</td></tr>
+       <tr><td><a href="Providers/RouteServiceProvider.php.html#22"><abbr title="App\Providers\RouteServiceProvider::boot">boot</abbr></a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Property/IndexController.php.html#224"><abbr title="App\Http\Controllers\Api\v1\Property\IndexController::clearPropertiesCache">clearPropertiesCache</abbr></a></td><td class="text-right">75%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Http/Controllers/Api/v1/User/UserController.php.html#164"><abbr title="App\Http\Controllers\Api\v1\User\UserController::update">update</abbr></a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/User/UserController.php.html#287"><abbr title="App\Http\Controllers\Api\v1\User\UserController::changePassword">changePassword</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Services/UserService.php.html#94"><abbr title="App\Services\UserService::updateUser">updateUser</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/User/UserController.php.html#244"><abbr title="App\Http\Controllers\Api\v1\User\UserController::destroy">destroy</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Jobs/SendRentReminderJob.php.html#41"><abbr title="App\Jobs\SendRentReminderJob::handle">handle</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/User/UserController.php.html#89"><abbr title="App\Http\Controllers\Api\v1\User\UserController::show">show</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/User/UserController.php.html#115"><abbr title="App\Http\Controllers\Api\v1\User\UserController::store">store</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Repositories/AuthRepository.php.html#69"><abbr title="App\Repositories\AuthRepository::resetPassword">resetPassword</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Services/RentReminderService.php.html#18"><abbr title="App\Services\RentReminderService::scheduleUpcomingRentReminders">scheduleUpcomingRentReminders</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Services/RentReminderService.php.html#60"><abbr title="App\Services\RentReminderService::sendReminderForPayment">sendReminderForPayment</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Auth/AuthController.php.html#31"><abbr title="App\Http\Controllers\Api\v1\Auth\AuthController::register">register</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Auth/AuthController.php.html#70"><abbr title="App\Http\Controllers\Api\v1\Auth\AuthController::login">login</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Auth/AuthController.php.html#124"><abbr title="App\Http\Controllers\Api\v1\Auth\AuthController::forgotPassword">forgotPassword</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Auth/AuthController.php.html#156"><abbr title="App\Http\Controllers\Api\v1\Auth\AuthController::resetPassword">resetPassword</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Payment/PaymentController.php.html#187"><abbr title="App\Http\Controllers\Api\v1\Payment\PaymentController::markPaymentAsCompleted">markPaymentAsCompleted</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Payment/PaymentController.php.html#230"><abbr title="App\Http\Controllers\Api\v1\Payment\PaymentController::sendPaymentReceipt">sendPaymentReceipt</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Payment/PaymentController.php.html#252"><abbr title="App\Http\Controllers\Api\v1\Payment\PaymentController::sendRentReminder">sendRentReminder</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Tenant/TenantController.php.html#120"><abbr title="App\Http\Controllers\Api\v1\Tenant\TenantController::update">update</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Unit/UnitController.php.html#102"><abbr title="App\Http\Controllers\Api\v1\Unit\UnitController::update">update</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/User/UserController.php.html#339"><abbr title="App\Http\Controllers\Api\v1\User\UserController::getByRole">getByRole</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Middleware/AdminMiddleware.php.html#17"><abbr title="App\Http\Middleware\AdminMiddleware::handle">handle</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Middleware/RoleMiddleware.php.html#17"><abbr title="App\Http\Middleware\RoleMiddleware::handle">handle</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Repositories/UserRepository.php.html#21"><abbr title="App\Repositories\UserRepository::getAllPaginated">getAllPaginated</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Repositories/UserRepository.php.html#52"><abbr title="App\Repositories\UserRepository::getAll">getAll</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Repositories/UserRepository.php.html#122"><abbr title="App\Repositories\UserRepository::update">update</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Services/AuthService.php.html#62"><abbr title="App\Services\AuthService::login">login</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Services/PaymentService.php.html#115"><abbr title="App\Services\PaymentService::sendPaymentReceipt">sendPaymentReceipt</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Services/UserService.php.html#69"><abbr title="App\Services\UserService::createUser">createUser</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Services/UserService.php.html#157"><abbr title="App\Services\UserService::changePassword">changePassword</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Console/Commands/SendRentRemindersCommand.php.html#49"><abbr title="App\Console\Commands\SendRentRemindersCommand::handle">handle</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Domain/Property/Models/User.php.html#71"><abbr title="App\Domain\Property\Models\User::isManager">isManager</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Lease/LeaseController.php.html#46"><abbr title="App\Http\Controllers\Api\v1\Lease\LeaseController::show">show</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Lease/LeaseController.php.html#63"><abbr title="App\Http\Controllers\Api\v1\Lease\LeaseController::store">store</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Lease/LeaseController.php.html#91"><abbr title="App\Http\Controllers\Api\v1\Lease\LeaseController::update">update</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Lease/LeaseController.php.html#119"><abbr title="App\Http\Controllers\Api\v1\Lease\LeaseController::destroy">destroy</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Lease/LeaseController.php.html#196"><abbr title="App\Http\Controllers\Api\v1\Lease\LeaseController::terminateLease">terminateLease</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Lease/LeaseController.php.html#218"><abbr title="App\Http\Controllers\Api\v1\Lease\LeaseController::renewLease">renewLease</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Payment/PaymentController.php.html#48"><abbr title="App\Http\Controllers\Api\v1\Payment\PaymentController::show">show</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Payment/PaymentController.php.html#65"><abbr title="App\Http\Controllers\Api\v1\Payment\PaymentController::store">store</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Payment/PaymentController.php.html#91"><abbr title="App\Http\Controllers\Api\v1\Payment\PaymentController::update">update</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Payment/PaymentController.php.html#118"><abbr title="App\Http\Controllers\Api\v1\Payment\PaymentController::destroy">destroy</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Payment/PaymentController.php.html#210"><abbr title="App\Http\Controllers\Api\v1\Payment\PaymentController::generateRentInvoice">generateRentInvoice</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Tenant/TenantController.php.html#55"><abbr title="App\Http\Controllers\Api\v1\Tenant\TenantController::store">store</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Tenant/TenantController.php.html#92"><abbr title="App\Http\Controllers\Api\v1\Tenant\TenantController::show">show</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Tenant/TenantController.php.html#169"><abbr title="App\Http\Controllers\Api\v1\Tenant\TenantController::destroy">destroy</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Tenant/TenantController.php.html#195"><abbr title="App\Http\Controllers\Api\v1\Tenant\TenantController::trackCacheKey">trackCacheKey</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Tenant/TenantController.php.html#207"><abbr title="App\Http\Controllers\Api\v1\Tenant\TenantController::clearTenantsCache">clearTenantsCache</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Unit/UnitController.php.html#44"><abbr title="App\Http\Controllers\Api\v1\Unit\UnitController::store">store</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Unit/UnitController.php.html#78"><abbr title="App\Http\Controllers\Api\v1\Unit\UnitController::show">show</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Unit/UnitController.php.html#145"><abbr title="App\Http\Controllers\Api\v1\Unit\UnitController::destroy">destroy</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/User/UserController.php.html#33"><abbr title="App\Http\Controllers\Api\v1\User\UserController::index">index</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/User/UserController.php.html#61"><abbr title="App\Http\Controllers\Api\v1\User\UserController::all">all</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Jobs/SendPaymentReceipt.php.html#39"><abbr title="App\Jobs\SendPaymentReceipt::handle">handle</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Providers/CacheServiceProvider.php.html#60"><abbr title="App\Providers\CacheServiceProvider::clearPropertyCache">clearPropertyCache</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Providers/CacheServiceProvider.php.html#74"><abbr title="App\Providers\CacheServiceProvider::clearTenantCache">clearTenantCache</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/UnitRepository.php.html#49"><abbr title="App\Repositories\UnitRepository::getVacantUnits">getVacantUnits</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/UserRepository.php.html#105"><abbr title="App\Repositories\UserRepository::create">create</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repositories/UserRepository.php.html#146"><abbr title="App\Repositories\UserRepository::delete">delete</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Services/AuthService.php.html#103"><abbr title="App\Services\AuthService::forgotPassword">forgotPassword</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Services/LeaseService.php.html#30"><abbr title="App\Services\LeaseService::createLease">createLease</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Services/LeaseService.php.html#81"><abbr title="App\Services\LeaseService::renewLease">renewLease</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Services/PaymentService.php.html#51"><abbr title="App\Services\PaymentService::createPayment">createPayment</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Services/PaymentService.php.html#95"><abbr title="App\Services\PaymentService::generateRentInvoice">generateRentInvoice</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Services/UserService.php.html#124"><abbr title="App\Services\UserService::deleteUser">deleteUser</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Providers/AppServiceProvider.php.html#68"><abbr title="App\Providers\AppServiceProvider::boot">boot</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Providers/RouteServiceProvider.php.html#22"><abbr title="App\Providers\RouteServiceProvider::boot">boot</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="Http/Controllers/Api/v1/Property/IndexController.php.html#224"><abbr title="App\Http\Controllers\Api\v1\Property\IndexController::clearPropertiesCache">clearPropertiesCache</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 11.0.9</a> using <a href="https://www.php.net/" target="_top">PHP 8.3.6</a> and <a href="https://phpunit.de/">PHPUnit 11.5.15</a> at Fri May 9 10:35:23 UTC 2025.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="_js/jquery.min.js?v=11.0.9" type="text/javascript"></script>
+  <script src="_js/d3.min.js?v=11.0.9" type="text/javascript"></script>
+  <script src="_js/nv.d3.min.js?v=11.0.9" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([34,0,0,1,1,1,0,0,1,0,1,2], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([218,0,0,1,0,1,1,1,1,0,0,13], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[22.22222222222222,3,"<a href=\"Console\/Commands\/SendRentRemindersCommand.php.html#8\">App\\Console\\Commands\\SendRentRemindersCommand<\/a>"],[0,8,"<a href=\"Domain\/Property\/Models\/Lease.php.html#14\">App\\Domain\\Property\\Models\\Lease<\/a>"],[0,4,"<a href=\"Domain\/Property\/Models\/Payment.php.html#10\">App\\Domain\\Property\\Models\\Payment<\/a>"],[0,3,"<a href=\"Domain\/Property\/Models\/Property.php.html#11\">App\\Domain\\Property\\Models\\Property<\/a>"],[0,4,"<a href=\"Domain\/Property\/Models\/Tenant.php.html#13\">App\\Domain\\Property\\Models\\Tenant<\/a>"],[0,4,"<a href=\"Domain\/Property\/Models\/Unit.php.html#11\">App\\Domain\\Property\\Models\\Unit<\/a>"],[0,6,"<a href=\"Domain\/Property\/Models\/User.php.html#13\">App\\Domain\\Property\\Models\\User<\/a>"],[0,15,"<a href=\"Http\/Controllers\/Api\/v1\/Auth\/AuthController.php.html#11\">App\\Http\\Controllers\\Api\\v1\\Auth\\AuthController<\/a>"],[0,18,"<a href=\"Http\/Controllers\/Api\/v1\/Lease\/LeaseController.php.html#11\">App\\Http\\Controllers\\Api\\v1\\Lease\\LeaseController<\/a>"],[0,24,"<a href=\"Http\/Controllers\/Api\/v1\/Payment\/PaymentController.php.html#11\">App\\Http\\Controllers\\Api\\v1\\Payment\\PaymentController<\/a>"],[99,16,"<a href=\"Http\/Controllers\/Api\/v1\/Property\/IndexController.php.html#11\">App\\Http\\Controllers\\Api\\v1\\Property\\IndexController<\/a>"],[0,15,"<a href=\"Http\/Controllers\/Api\/v1\/Tenant\/TenantController.php.html#14\">App\\Http\\Controllers\\Api\\v1\\Tenant\\TenantController<\/a>"],[0,13,"<a href=\"Http\/Controllers\/Api\/v1\/Unit\/UnitController.php.html#12\">App\\Http\\Controllers\\Api\\v1\\Unit\\UnitController<\/a>"],[0,37,"<a href=\"Http\/Controllers\/Api\/v1\/User\/UserController.php.html#12\">App\\Http\\Controllers\\Api\\v1\\User\\UserController<\/a>"],[100,0,"<a href=\"Http\/Controllers\/Controller.php.html#5\">App\\Http\\Controllers\\Controller<\/a>"],[0,3,"<a href=\"Http\/Middleware\/AdminMiddleware.php.html#10\">App\\Http\\Middleware\\AdminMiddleware<\/a>"],[0,3,"<a href=\"Http\/Middleware\/RoleMiddleware.php.html#10\">App\\Http\\Middleware\\RoleMiddleware<\/a>"],[0,3,"<a href=\"Jobs\/SendPaymentReceipt.php.html#14\">App\\Jobs\\SendPaymentReceipt<\/a>"],[0,6,"<a href=\"Jobs\/SendRentReminderJob.php.html#16\">App\\Jobs\\SendRentReminderJob<\/a>"],[0,4,"<a href=\"Mail\/PasswordResetMail.php.html#12\">App\\Mail\\PasswordResetMail<\/a>"],[0,4,"<a href=\"Mail\/PaymentReceipt.php.html#11\">App\\Mail\\PaymentReceipt<\/a>"],[0,2,"<a href=\"Mail\/RentReminderMail.php.html#13\">App\\Mail\\RentReminderMail<\/a>"],[39.02439024390244,3,"<a href=\"Providers\/AppServiceProvider.php.html#16\">App\\Providers\\AppServiceProvider<\/a>"],[41.935483870967744,6,"<a href=\"Providers\/CacheServiceProvider.php.html#11\">App\\Providers\\CacheServiceProvider<\/a>"],[100,2,"<a href=\"Providers\/RepositoryServiceProvider.php.html#7\">App\\Providers\\RepositoryServiceProvider<\/a>"],[75,3,"<a href=\"Providers\/RouteServiceProvider.php.html#9\">App\\Providers\\RouteServiceProvider<\/a>"],[0,7,"<a href=\"Repositories\/AuthRepository.php.html#12\">App\\Repositories\\AuthRepository<\/a>"],[0,10,"<a href=\"Repositories\/LeaseRepository.php.html#8\">App\\Repositories\\LeaseRepository<\/a>"],[0,9,"<a href=\"Repositories\/PaymentRepository.php.html#8\">App\\Repositories\\PaymentRepository<\/a>"],[0,7,"<a href=\"Repositories\/PropertyRepository.php.html#7\">App\\Repositories\\PropertyRepository<\/a>"],[0,6,"<a href=\"Repositories\/TenantRepository.php.html#7\">App\\Repositories\\TenantRepository<\/a>"],[0,9,"<a href=\"Repositories\/UnitRepository.php.html#8\">App\\Repositories\\UnitRepository<\/a>"],[0,16,"<a href=\"Repositories\/UserRepository.php.html#12\">App\\Repositories\\UserRepository<\/a>"],[0,9,"<a href=\"Services\/AuthService.php.html#17\">App\\Services\\AuthService<\/a>"],[0,14,"<a href=\"Services\/LeaseService.php.html#7\">App\\Services\\LeaseService<\/a>"],[0,16,"<a href=\"Services\/PaymentService.php.html#17\">App\\Services\\PaymentService<\/a>"],[0,7,"<a href=\"Services\/PropertyService.php.html#6\">App\\Services\\PropertyService<\/a>"],[0,8,"<a href=\"Services\/RentReminderService.php.html#10\">App\\Services\\RentReminderService<\/a>"],[0,6,"<a href=\"Services\/TenantService.php.html#6\">App\\Services\\TenantService<\/a>"],[0,8,"<a href=\"Services\/UnitService.php.html#6\">App\\Services\\UnitService<\/a>"],[0,19,"<a href=\"Services\/UserService.php.html#15\">App\\Services\\UserService<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"Console\/Commands\/SendRentRemindersCommand.php.html#38\">App\\Console\\Commands\\SendRentRemindersCommand::__construct<\/a>"],[0,2,"<a href=\"Console\/Commands\/SendRentRemindersCommand.php.html#49\">App\\Console\\Commands\\SendRentRemindersCommand::handle<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/Lease.php.html#47\">App\\Domain\\Property\\Models\\Lease::unit<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/Lease.php.html#55\">App\\Domain\\Property\\Models\\Lease::tenant<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/Lease.php.html#63\">App\\Domain\\Property\\Models\\Lease::payments<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/Lease.php.html#71\">App\\Domain\\Property\\Models\\Lease::scopeActive<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/Lease.php.html#79\">App\\Domain\\Property\\Models\\Lease::isActive<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/Lease.php.html#87\">App\\Domain\\Property\\Models\\Lease::getTotalPaidAttribute<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/Lease.php.html#95\">App\\Domain\\Property\\Models\\Lease::getDurationMonthsAttribute<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/Lease.php.html#99\">App\\Domain\\Property\\Models\\Lease::newFactory<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/Payment.php.html#42\">App\\Domain\\Property\\Models\\Payment::lease<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/Payment.php.html#50\">App\\Domain\\Property\\Models\\Payment::scopeCompleted<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/Payment.php.html#58\">App\\Domain\\Property\\Models\\Payment::isCompleted<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/Payment.php.html#63\">App\\Domain\\Property\\Models\\Payment::newFactory<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/Property.php.html#32\">App\\Domain\\Property\\Models\\Property::user<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/Property.php.html#40\">App\\Domain\\Property\\Models\\Property::units<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/Property.php.html#45\">App\\Domain\\Property\\Models\\Property::newFactory<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/Tenant.php.html#33\">App\\Domain\\Property\\Models\\Tenant::leases<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/Tenant.php.html#41\">App\\Domain\\Property\\Models\\Tenant::activeLease<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/Tenant.php.html#51\">App\\Domain\\Property\\Models\\Tenant::getFullNameAttribute<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/Tenant.php.html#56\">App\\Domain\\Property\\Models\\Tenant::newFactory<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/Unit.php.html#33\">App\\Domain\\Property\\Models\\Unit::property<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/Unit.php.html#41\">App\\Domain\\Property\\Models\\Unit::leases<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/Unit.php.html#49\">App\\Domain\\Property\\Models\\Unit::activeLease<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/Unit.php.html#54\">App\\Domain\\Property\\Models\\Unit::newFactory<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/User.php.html#45\">App\\Domain\\Property\\Models\\User::casts<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/User.php.html#55\">App\\Domain\\Property\\Models\\User::properties<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/User.php.html#63\">App\\Domain\\Property\\Models\\User::isAdmin<\/a>"],[0,2,"<a href=\"Domain\/Property\/Models\/User.php.html#71\">App\\Domain\\Property\\Models\\User::isManager<\/a>"],[0,1,"<a href=\"Domain\/Property\/Models\/User.php.html#76\">App\\Domain\\Property\\Models\\User::newFactory<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/v1\/Auth\/AuthController.php.html#20\">App\\Http\\Controllers\\Api\\v1\\Auth\\AuthController::__construct<\/a>"],[0,3,"<a href=\"Http\/Controllers\/Api\/v1\/Auth\/AuthController.php.html#31\">App\\Http\\Controllers\\Api\\v1\\Auth\\AuthController::register<\/a>"],[0,3,"<a href=\"Http\/Controllers\/Api\/v1\/Auth\/AuthController.php.html#70\">App\\Http\\Controllers\\Api\\v1\\Auth\\AuthController::login<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/v1\/Auth\/AuthController.php.html#109\">App\\Http\\Controllers\\Api\\v1\\Auth\\AuthController::logout<\/a>"],[0,3,"<a href=\"Http\/Controllers\/Api\/v1\/Auth\/AuthController.php.html#124\">App\\Http\\Controllers\\Api\\v1\\Auth\\AuthController::forgotPassword<\/a>"],[0,3,"<a href=\"Http\/Controllers\/Api\/v1\/Auth\/AuthController.php.html#156\">App\\Http\\Controllers\\Api\\v1\\Auth\\AuthController::resetPassword<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/v1\/Auth\/AuthController.php.html#190\">App\\Http\\Controllers\\Api\\v1\\Auth\\AuthController::user<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/v1\/Lease\/LeaseController.php.html#20\">App\\Http\\Controllers\\Api\\v1\\Lease\\LeaseController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/v1\/Lease\/LeaseController.php.html#32\">App\\Http\\Controllers\\Api\\v1\\Lease\\LeaseController::index<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Api\/v1\/Lease\/LeaseController.php.html#46\">App\\Http\\Controllers\\Api\\v1\\Lease\\LeaseController::show<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Api\/v1\/Lease\/LeaseController.php.html#63\">App\\Http\\Controllers\\Api\\v1\\Lease\\LeaseController::store<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Api\/v1\/Lease\/LeaseController.php.html#91\">App\\Http\\Controllers\\Api\\v1\\Lease\\LeaseController::update<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Api\/v1\/Lease\/LeaseController.php.html#119\">App\\Http\\Controllers\\Api\\v1\\Lease\\LeaseController::destroy<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/v1\/Lease\/LeaseController.php.html#137\">App\\Http\\Controllers\\Api\\v1\\Lease\\LeaseController::getLeasesByUnit<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/v1\/Lease\/LeaseController.php.html#152\">App\\Http\\Controllers\\Api\\v1\\Lease\\LeaseController::getLeasesByTenant<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/v1\/Lease\/LeaseController.php.html#166\">App\\Http\\Controllers\\Api\\v1\\Lease\\LeaseController::getActiveLeases<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/v1\/Lease\/LeaseController.php.html#180\">App\\Http\\Controllers\\Api\\v1\\Lease\\LeaseController::getExpiringLeases<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Api\/v1\/Lease\/LeaseController.php.html#196\">App\\Http\\Controllers\\Api\\v1\\Lease\\LeaseController::terminateLease<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Api\/v1\/Lease\/LeaseController.php.html#218\">App\\Http\\Controllers\\Api\\v1\\Lease\\LeaseController::renewLease<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/v1\/Payment\/PaymentController.php.html#21\">App\\Http\\Controllers\\Api\\v1\\Payment\\PaymentController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/v1\/Payment\/PaymentController.php.html#34\">App\\Http\\Controllers\\Api\\v1\\Payment\\PaymentController::index<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Api\/v1\/Payment\/PaymentController.php.html#48\">App\\Http\\Controllers\\Api\\v1\\Payment\\PaymentController::show<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Api\/v1\/Payment\/PaymentController.php.html#65\">App\\Http\\Controllers\\Api\\v1\\Payment\\PaymentController::store<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Api\/v1\/Payment\/PaymentController.php.html#91\">App\\Http\\Controllers\\Api\\v1\\Payment\\PaymentController::update<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Api\/v1\/Payment\/PaymentController.php.html#118\">App\\Http\\Controllers\\Api\\v1\\Payment\\PaymentController::destroy<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/v1\/Payment\/PaymentController.php.html#136\">App\\Http\\Controllers\\Api\\v1\\Payment\\PaymentController::getPaymentsByLease<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/v1\/Payment\/PaymentController.php.html#150\">App\\Http\\Controllers\\Api\\v1\\Payment\\PaymentController::getPaymentsByDateRange<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/v1\/Payment\/PaymentController.php.html#173\">App\\Http\\Controllers\\Api\\v1\\Payment\\PaymentController::getOutstandingPayments<\/a>"],[0,3,"<a href=\"Http\/Controllers\/Api\/v1\/Payment\/PaymentController.php.html#187\">App\\Http\\Controllers\\Api\\v1\\Payment\\PaymentController::markPaymentAsCompleted<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Api\/v1\/Payment\/PaymentController.php.html#210\">App\\Http\\Controllers\\Api\\v1\\Payment\\PaymentController::generateRentInvoice<\/a>"],[0,3,"<a href=\"Http\/Controllers\/Api\/v1\/Payment\/PaymentController.php.html#230\">App\\Http\\Controllers\\Api\\v1\\Payment\\PaymentController::sendPaymentReceipt<\/a>"],[0,3,"<a href=\"Http\/Controllers\/Api\/v1\/Payment\/PaymentController.php.html#252\">App\\Http\\Controllers\\Api\\v1\\Payment\\PaymentController::sendRentReminder<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Api\/v1\/Property\/IndexController.php.html#15\">App\\Http\\Controllers\\Api\\v1\\Property\\IndexController::__construct<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Api\/v1\/Property\/IndexController.php.html#26\">App\\Http\\Controllers\\Api\\v1\\Property\\IndexController::index<\/a>"],[100,2,"<a href=\"Http\/Controllers\/Api\/v1\/Property\/IndexController.php.html#53\">App\\Http\\Controllers\\Api\\v1\\Property\\IndexController::store<\/a>"],[100,2,"<a href=\"Http\/Controllers\/Api\/v1\/Property\/IndexController.php.html#89\">App\\Http\\Controllers\\Api\\v1\\Property\\IndexController::show<\/a>"],[100,3,"<a href=\"Http\/Controllers\/Api\/v1\/Property\/IndexController.php.html#117\">App\\Http\\Controllers\\Api\\v1\\Property\\IndexController::update<\/a>"],[100,2,"<a href=\"Http\/Controllers\/Api\/v1\/Property\/IndexController.php.html#160\">App\\Http\\Controllers\\Api\\v1\\Property\\IndexController::destroy<\/a>"],[100,1,"<a href=\"Http\/Controllers\/Api\/v1\/Property\/IndexController.php.html#188\">App\\Http\\Controllers\\Api\\v1\\Property\\IndexController::getByUser<\/a>"],[100,2,"<a href=\"Http\/Controllers\/Api\/v1\/Property\/IndexController.php.html#212\">App\\Http\\Controllers\\Api\\v1\\Property\\IndexController::trackCacheKey<\/a>"],[75,2,"<a href=\"Http\/Controllers\/Api\/v1\/Property\/IndexController.php.html#224\">App\\Http\\Controllers\\Api\\v1\\Property\\IndexController::clearPropertiesCache<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/v1\/Tenant\/TenantController.php.html#18\">App\\Http\\Controllers\\Api\\v1\\Tenant\\TenantController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/v1\/Tenant\/TenantController.php.html#29\">App\\Http\\Controllers\\Api\\v1\\Tenant\\TenantController::index<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Api\/v1\/Tenant\/TenantController.php.html#55\">App\\Http\\Controllers\\Api\\v1\\Tenant\\TenantController::store<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Api\/v1\/Tenant\/TenantController.php.html#92\">App\\Http\\Controllers\\Api\\v1\\Tenant\\TenantController::show<\/a>"],[0,3,"<a href=\"Http\/Controllers\/Api\/v1\/Tenant\/TenantController.php.html#120\">App\\Http\\Controllers\\Api\\v1\\Tenant\\TenantController::update<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Api\/v1\/Tenant\/TenantController.php.html#169\">App\\Http\\Controllers\\Api\\v1\\Tenant\\TenantController::destroy<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Api\/v1\/Tenant\/TenantController.php.html#195\">App\\Http\\Controllers\\Api\\v1\\Tenant\\TenantController::trackCacheKey<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Api\/v1\/Tenant\/TenantController.php.html#207\">App\\Http\\Controllers\\Api\\v1\\Tenant\\TenantController::clearTenantsCache<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/v1\/Unit\/UnitController.php.html#16\">App\\Http\\Controllers\\Api\\v1\\Unit\\UnitController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/v1\/Unit\/UnitController.php.html#27\">App\\Http\\Controllers\\Api\\v1\\Unit\\UnitController::index<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Api\/v1\/Unit\/UnitController.php.html#44\">App\\Http\\Controllers\\Api\\v1\\Unit\\UnitController::store<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Api\/v1\/Unit\/UnitController.php.html#78\">App\\Http\\Controllers\\Api\\v1\\Unit\\UnitController::show<\/a>"],[0,3,"<a href=\"Http\/Controllers\/Api\/v1\/Unit\/UnitController.php.html#102\">App\\Http\\Controllers\\Api\\v1\\Unit\\UnitController::update<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Api\/v1\/Unit\/UnitController.php.html#145\">App\\Http\\Controllers\\Api\\v1\\Unit\\UnitController::destroy<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/v1\/Unit\/UnitController.php.html#171\">App\\Http\\Controllers\\Api\\v1\\Unit\\UnitController::getUnitsByProperty<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/v1\/Unit\/UnitController.php.html#188\">App\\Http\\Controllers\\Api\\v1\\Unit\\UnitController::getVacantUnits<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Api\/v1\/User\/UserController.php.html#21\">App\\Http\\Controllers\\Api\\v1\\User\\UserController::__construct<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Api\/v1\/User\/UserController.php.html#33\">App\\Http\\Controllers\\Api\\v1\\User\\UserController::index<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Api\/v1\/User\/UserController.php.html#61\">App\\Http\\Controllers\\Api\\v1\\User\\UserController::all<\/a>"],[0,4,"<a href=\"Http\/Controllers\/Api\/v1\/User\/UserController.php.html#89\">App\\Http\\Controllers\\Api\\v1\\User\\UserController::show<\/a>"],[0,4,"<a href=\"Http\/Controllers\/Api\/v1\/User\/UserController.php.html#115\">App\\Http\\Controllers\\Api\\v1\\User\\UserController::store<\/a>"],[0,10,"<a href=\"Http\/Controllers\/Api\/v1\/User\/UserController.php.html#164\">App\\Http\\Controllers\\Api\\v1\\User\\UserController::update<\/a>"],[0,5,"<a href=\"Http\/Controllers\/Api\/v1\/User\/UserController.php.html#244\">App\\Http\\Controllers\\Api\\v1\\User\\UserController::destroy<\/a>"],[0,6,"<a href=\"Http\/Controllers\/Api\/v1\/User\/UserController.php.html#287\">App\\Http\\Controllers\\Api\\v1\\User\\UserController::changePassword<\/a>"],[0,3,"<a href=\"Http\/Controllers\/Api\/v1\/User\/UserController.php.html#339\">App\\Http\\Controllers\\Api\\v1\\User\\UserController::getByRole<\/a>"],[0,3,"<a href=\"Http\/Middleware\/AdminMiddleware.php.html#17\">App\\Http\\Middleware\\AdminMiddleware::handle<\/a>"],[0,3,"<a href=\"Http\/Middleware\/RoleMiddleware.php.html#17\">App\\Http\\Middleware\\RoleMiddleware::handle<\/a>"],[0,1,"<a href=\"Jobs\/SendPaymentReceipt.php.html#27\">App\\Jobs\\SendPaymentReceipt::__construct<\/a>"],[0,2,"<a href=\"Jobs\/SendPaymentReceipt.php.html#39\">App\\Jobs\\SendPaymentReceipt::handle<\/a>"],[0,1,"<a href=\"Jobs\/SendRentReminderJob.php.html#30\">App\\Jobs\\SendRentReminderJob::__construct<\/a>"],[0,5,"<a href=\"Jobs\/SendRentReminderJob.php.html#41\">App\\Jobs\\SendRentReminderJob::handle<\/a>"],[0,1,"<a href=\"Mail\/PasswordResetMail.php.html#22\">App\\Mail\\PasswordResetMail::__construct<\/a>"],[0,1,"<a href=\"Mail\/PasswordResetMail.php.html#30\">App\\Mail\\PasswordResetMail::envelope<\/a>"],[0,1,"<a href=\"Mail\/PasswordResetMail.php.html#40\">App\\Mail\\PasswordResetMail::content<\/a>"],[0,1,"<a href=\"Mail\/PasswordResetMail.php.html#52\">App\\Mail\\PasswordResetMail::attachments<\/a>"],[0,1,"<a href=\"Mail\/PaymentReceipt.php.html#23\">App\\Mail\\PaymentReceipt::__construct<\/a>"],[0,1,"<a href=\"Mail\/PaymentReceipt.php.html#34\">App\\Mail\\PaymentReceipt::envelope<\/a>"],[0,1,"<a href=\"Mail\/PaymentReceipt.php.html#44\">App\\Mail\\PaymentReceipt::content<\/a>"],[0,1,"<a href=\"Mail\/PaymentReceipt.php.html#56\">App\\Mail\\PaymentReceipt::attachments<\/a>"],[0,1,"<a href=\"Mail\/RentReminderMail.php.html#27\">App\\Mail\\RentReminderMail::__construct<\/a>"],[0,1,"<a href=\"Mail\/RentReminderMail.php.html#38\">App\\Mail\\RentReminderMail::build<\/a>"],[41.17647058823529,1,"<a href=\"Providers\/AppServiceProvider.php.html#21\">App\\Providers\\AppServiceProvider::register<\/a>"],[28.57142857142857,2,"<a href=\"Providers\/AppServiceProvider.php.html#68\">App\\Providers\\AppServiceProvider::boot<\/a>"],[100,1,"<a href=\"Providers\/CacheServiceProvider.php.html#16\">App\\Providers\\CacheServiceProvider::register<\/a>"],[54.54545454545454,1,"<a href=\"Providers\/CacheServiceProvider.php.html#24\">App\\Providers\\CacheServiceProvider::boot<\/a>"],[0,2,"<a href=\"Providers\/CacheServiceProvider.php.html#60\">App\\Providers\\CacheServiceProvider::clearPropertyCache<\/a>"],[0,2,"<a href=\"Providers\/CacheServiceProvider.php.html#74\">App\\Providers\\CacheServiceProvider::clearTenantCache<\/a>"],[100,1,"<a href=\"Providers\/RepositoryServiceProvider.php.html#12\">App\\Providers\\RepositoryServiceProvider::register<\/a>"],[100,1,"<a href=\"Providers\/RepositoryServiceProvider.php.html#44\">App\\Providers\\RepositoryServiceProvider::boot<\/a>"],[100,1,"<a href=\"Providers\/RouteServiceProvider.php.html#14\">App\\Providers\\RouteServiceProvider::register<\/a>"],[66.66666666666666,2,"<a href=\"Providers\/RouteServiceProvider.php.html#22\">App\\Providers\\RouteServiceProvider::boot<\/a>"],[0,1,"<a href=\"Repositories\/AuthRepository.php.html#20\">App\\Repositories\\AuthRepository::register<\/a>"],[0,1,"<a href=\"Repositories\/AuthRepository.php.html#33\">App\\Repositories\\AuthRepository::findUserByEmail<\/a>"],[0,1,"<a href=\"Repositories\/AuthRepository.php.html#44\">App\\Repositories\\AuthRepository::createPasswordResetToken<\/a>"],[0,4,"<a href=\"Repositories\/AuthRepository.php.html#69\">App\\Repositories\\AuthRepository::resetPassword<\/a>"],[0,1,"<a href=\"Repositories\/LeaseRepository.php.html#12\">App\\Repositories\\LeaseRepository::__construct<\/a>"],[0,1,"<a href=\"Repositories\/LeaseRepository.php.html#17\">App\\Repositories\\LeaseRepository::getAllLeases<\/a>"],[0,1,"<a href=\"Repositories\/LeaseRepository.php.html#22\">App\\Repositories\\LeaseRepository::getLeaseById<\/a>"],[0,1,"<a href=\"Repositories\/LeaseRepository.php.html#27\">App\\Repositories\\LeaseRepository::createLease<\/a>"],[0,1,"<a href=\"Repositories\/LeaseRepository.php.html#32\">App\\Repositories\\LeaseRepository::updateLease<\/a>"],[0,1,"<a href=\"Repositories\/LeaseRepository.php.html#39\">App\\Repositories\\LeaseRepository::deleteLease<\/a>"],[0,1,"<a href=\"Repositories\/LeaseRepository.php.html#44\">App\\Repositories\\LeaseRepository::getLeasesByUnit<\/a>"],[0,1,"<a href=\"Repositories\/LeaseRepository.php.html#49\">App\\Repositories\\LeaseRepository::getLeasesByTenant<\/a>"],[0,1,"<a href=\"Repositories\/LeaseRepository.php.html#54\">App\\Repositories\\LeaseRepository::getActiveLeases<\/a>"],[0,1,"<a href=\"Repositories\/LeaseRepository.php.html#59\">App\\Repositories\\LeaseRepository::getExpiringLeases<\/a>"],[0,1,"<a href=\"Repositories\/PaymentRepository.php.html#12\">App\\Repositories\\PaymentRepository::__construct<\/a>"],[0,1,"<a href=\"Repositories\/PaymentRepository.php.html#17\">App\\Repositories\\PaymentRepository::getAllPayments<\/a>"],[0,1,"<a href=\"Repositories\/PaymentRepository.php.html#22\">App\\Repositories\\PaymentRepository::getPaymentById<\/a>"],[0,1,"<a href=\"Repositories\/PaymentRepository.php.html#27\">App\\Repositories\\PaymentRepository::createPayment<\/a>"],[0,1,"<a href=\"Repositories\/PaymentRepository.php.html#32\">App\\Repositories\\PaymentRepository::updatePayment<\/a>"],[0,1,"<a href=\"Repositories\/PaymentRepository.php.html#39\">App\\Repositories\\PaymentRepository::deletePayment<\/a>"],[0,1,"<a href=\"Repositories\/PaymentRepository.php.html#44\">App\\Repositories\\PaymentRepository::getPaymentsByLease<\/a>"],[0,1,"<a href=\"Repositories\/PaymentRepository.php.html#49\">App\\Repositories\\PaymentRepository::getPaymentsByDateRange<\/a>"],[0,1,"<a href=\"Repositories\/PaymentRepository.php.html#54\">App\\Repositories\\PaymentRepository::getOutstandingPayments<\/a>"],[0,1,"<a href=\"Repositories\/PropertyRepository.php.html#11\">App\\Repositories\\PropertyRepository::__construct<\/a>"],[0,1,"<a href=\"Repositories\/PropertyRepository.php.html#16\">App\\Repositories\\PropertyRepository::getAllProperties<\/a>"],[0,1,"<a href=\"Repositories\/PropertyRepository.php.html#21\">App\\Repositories\\PropertyRepository::getPropertyById<\/a>"],[0,1,"<a href=\"Repositories\/PropertyRepository.php.html#26\">App\\Repositories\\PropertyRepository::createProperty<\/a>"],[0,1,"<a href=\"Repositories\/PropertyRepository.php.html#31\">App\\Repositories\\PropertyRepository::updateProperty<\/a>"],[0,1,"<a href=\"Repositories\/PropertyRepository.php.html#38\">App\\Repositories\\PropertyRepository::deleteProperty<\/a>"],[0,1,"<a href=\"Repositories\/PropertyRepository.php.html#43\">App\\Repositories\\PropertyRepository::getPropertiesByUser<\/a>"],[0,1,"<a href=\"Repositories\/TenantRepository.php.html#11\">App\\Repositories\\TenantRepository::__construct<\/a>"],[0,1,"<a href=\"Repositories\/TenantRepository.php.html#16\">App\\Repositories\\TenantRepository::getAllTenants<\/a>"],[0,1,"<a href=\"Repositories\/TenantRepository.php.html#21\">App\\Repositories\\TenantRepository::getTenantById<\/a>"],[0,1,"<a href=\"Repositories\/TenantRepository.php.html#26\">App\\Repositories\\TenantRepository::createTenant<\/a>"],[0,1,"<a href=\"Repositories\/TenantRepository.php.html#31\">App\\Repositories\\TenantRepository::updateTenant<\/a>"],[0,1,"<a href=\"Repositories\/TenantRepository.php.html#38\">App\\Repositories\\TenantRepository::deleteTenant<\/a>"],[0,1,"<a href=\"Repositories\/UnitRepository.php.html#12\">App\\Repositories\\UnitRepository::__construct<\/a>"],[0,1,"<a href=\"Repositories\/UnitRepository.php.html#17\">App\\Repositories\\UnitRepository::getAllUnits<\/a>"],[0,1,"<a href=\"Repositories\/UnitRepository.php.html#22\">App\\Repositories\\UnitRepository::getUnitById<\/a>"],[0,1,"<a href=\"Repositories\/UnitRepository.php.html#27\">App\\Repositories\\UnitRepository::createUnit<\/a>"],[0,1,"<a href=\"Repositories\/UnitRepository.php.html#32\">App\\Repositories\\UnitRepository::updateUnit<\/a>"],[0,1,"<a href=\"Repositories\/UnitRepository.php.html#39\">App\\Repositories\\UnitRepository::deleteUnit<\/a>"],[0,1,"<a href=\"Repositories\/UnitRepository.php.html#44\">App\\Repositories\\UnitRepository::getUnitsByProperty<\/a>"],[0,2,"<a href=\"Repositories\/UnitRepository.php.html#49\">App\\Repositories\\UnitRepository::getVacantUnits<\/a>"],[0,3,"<a href=\"Repositories\/UserRepository.php.html#21\">App\\Repositories\\UserRepository::getAllPaginated<\/a>"],[0,3,"<a href=\"Repositories\/UserRepository.php.html#52\">App\\Repositories\\UserRepository::getAll<\/a>"],[0,1,"<a href=\"Repositories\/UserRepository.php.html#83\">App\\Repositories\\UserRepository::findById<\/a>"],[0,1,"<a href=\"Repositories\/UserRepository.php.html#94\">App\\Repositories\\UserRepository::findByEmail<\/a>"],[0,2,"<a href=\"Repositories\/UserRepository.php.html#105\">App\\Repositories\\UserRepository::create<\/a>"],[0,3,"<a href=\"Repositories\/UserRepository.php.html#122\">App\\Repositories\\UserRepository::update<\/a>"],[0,2,"<a href=\"Repositories\/UserRepository.php.html#146\">App\\Repositories\\UserRepository::delete<\/a>"],[0,1,"<a href=\"Repositories\/UserRepository.php.html#163\">App\\Repositories\\UserRepository::getByRole<\/a>"],[0,1,"<a href=\"Services\/AuthService.php.html#26\">App\\Services\\AuthService::__construct<\/a>"],[0,1,"<a href=\"Services\/AuthService.php.html#37\">App\\Services\\AuthService::register<\/a>"],[0,3,"<a href=\"Services\/AuthService.php.html#62\">App\\Services\\AuthService::login<\/a>"],[0,1,"<a href=\"Services\/AuthService.php.html#89\">App\\Services\\AuthService::logout<\/a>"],[0,2,"<a href=\"Services\/AuthService.php.html#103\">App\\Services\\AuthService::forgotPassword<\/a>"],[0,1,"<a href=\"Services\/AuthService.php.html#127\">App\\Services\\AuthService::resetPassword<\/a>"],[0,1,"<a href=\"Services\/LeaseService.php.html#12\">App\\Services\\LeaseService::__construct<\/a>"],[0,1,"<a href=\"Services\/LeaseService.php.html#20\">App\\Services\\LeaseService::getAllLeases<\/a>"],[0,1,"<a href=\"Services\/LeaseService.php.html#25\">App\\Services\\LeaseService::getLeaseById<\/a>"],[0,2,"<a href=\"Services\/LeaseService.php.html#30\">App\\Services\\LeaseService::createLease<\/a>"],[0,1,"<a href=\"Services\/LeaseService.php.html#43\">App\\Services\\LeaseService::updateLease<\/a>"],[0,1,"<a href=\"Services\/LeaseService.php.html#48\">App\\Services\\LeaseService::deleteLease<\/a>"],[0,1,"<a href=\"Services\/LeaseService.php.html#53\">App\\Services\\LeaseService::getLeasesByUnit<\/a>"],[0,1,"<a href=\"Services\/LeaseService.php.html#58\">App\\Services\\LeaseService::getLeasesByTenant<\/a>"],[0,1,"<a href=\"Services\/LeaseService.php.html#63\">App\\Services\\LeaseService::getActiveLeases<\/a>"],[0,1,"<a href=\"Services\/LeaseService.php.html#68\">App\\Services\\LeaseService::getExpiringLeases<\/a>"],[0,1,"<a href=\"Services\/LeaseService.php.html#73\">App\\Services\\LeaseService::terminateLease<\/a>"],[0,2,"<a href=\"Services\/LeaseService.php.html#81\">App\\Services\\LeaseService::renewLease<\/a>"],[0,1,"<a href=\"Services\/PaymentService.php.html#25\">App\\Services\\PaymentService::__construct<\/a>"],[0,1,"<a href=\"Services\/PaymentService.php.html#41\">App\\Services\\PaymentService::getAllPayments<\/a>"],[0,1,"<a href=\"Services\/PaymentService.php.html#46\">App\\Services\\PaymentService::getPaymentById<\/a>"],[0,2,"<a href=\"Services\/PaymentService.php.html#51\">App\\Services\\PaymentService::createPayment<\/a>"],[0,1,"<a href=\"Services\/PaymentService.php.html#62\">App\\Services\\PaymentService::updatePayment<\/a>"],[0,1,"<a href=\"Services\/PaymentService.php.html#67\">App\\Services\\PaymentService::deletePayment<\/a>"],[0,1,"<a href=\"Services\/PaymentService.php.html#72\">App\\Services\\PaymentService::getPaymentsByLease<\/a>"],[0,1,"<a href=\"Services\/PaymentService.php.html#77\">App\\Services\\PaymentService::getPaymentsByDateRange<\/a>"],[0,1,"<a href=\"Services\/PaymentService.php.html#82\">App\\Services\\PaymentService::getOutstandingPayments<\/a>"],[0,1,"<a href=\"Services\/PaymentService.php.html#87\">App\\Services\\PaymentService::markPaymentAsCompleted<\/a>"],[0,2,"<a href=\"Services\/PaymentService.php.html#95\">App\\Services\\PaymentService::generateRentInvoice<\/a>"],[0,3,"<a href=\"Services\/PaymentService.php.html#115\">App\\Services\\PaymentService::sendPaymentReceipt<\/a>"],[0,1,"<a href=\"Services\/PropertyService.php.html#10\">App\\Services\\PropertyService::__construct<\/a>"],[0,1,"<a href=\"Services\/PropertyService.php.html#15\">App\\Services\\PropertyService::getAllProperties<\/a>"],[0,1,"<a href=\"Services\/PropertyService.php.html#20\">App\\Services\\PropertyService::getPropertyById<\/a>"],[0,1,"<a href=\"Services\/PropertyService.php.html#25\">App\\Services\\PropertyService::createProperty<\/a>"],[0,1,"<a href=\"Services\/PropertyService.php.html#30\">App\\Services\\PropertyService::updateProperty<\/a>"],[0,1,"<a href=\"Services\/PropertyService.php.html#35\">App\\Services\\PropertyService::deleteProperty<\/a>"],[0,1,"<a href=\"Services\/PropertyService.php.html#40\">App\\Services\\PropertyService::getPropertiesByUser<\/a>"],[0,4,"<a href=\"Services\/RentReminderService.php.html#18\">App\\Services\\RentReminderService::scheduleUpcomingRentReminders<\/a>"],[0,4,"<a href=\"Services\/RentReminderService.php.html#60\">App\\Services\\RentReminderService::sendReminderForPayment<\/a>"],[0,1,"<a href=\"Services\/TenantService.php.html#10\">App\\Services\\TenantService::__construct<\/a>"],[0,1,"<a href=\"Services\/TenantService.php.html#15\">App\\Services\\TenantService::getAllTenants<\/a>"],[0,1,"<a href=\"Services\/TenantService.php.html#20\">App\\Services\\TenantService::getTenantById<\/a>"],[0,1,"<a href=\"Services\/TenantService.php.html#25\">App\\Services\\TenantService::createTenant<\/a>"],[0,1,"<a href=\"Services\/TenantService.php.html#30\">App\\Services\\TenantService::updateTenant<\/a>"],[0,1,"<a href=\"Services\/TenantService.php.html#35\">App\\Services\\TenantService::deleteTenant<\/a>"],[0,1,"<a href=\"Services\/UnitService.php.html#10\">App\\Services\\UnitService::__construct<\/a>"],[0,1,"<a href=\"Services\/UnitService.php.html#15\">App\\Services\\UnitService::getAllUnits<\/a>"],[0,1,"<a href=\"Services\/UnitService.php.html#20\">App\\Services\\UnitService::getUnitById<\/a>"],[0,1,"<a href=\"Services\/UnitService.php.html#25\">App\\Services\\UnitService::createUnit<\/a>"],[0,1,"<a href=\"Services\/UnitService.php.html#30\">App\\Services\\UnitService::updateUnit<\/a>"],[0,1,"<a href=\"Services\/UnitService.php.html#35\">App\\Services\\UnitService::deleteUnit<\/a>"],[0,1,"<a href=\"Services\/UnitService.php.html#40\">App\\Services\\UnitService::getUnitsByProperty<\/a>"],[0,1,"<a href=\"Services\/UnitService.php.html#45\">App\\Services\\UnitService::getVacantUnits<\/a>"],[0,1,"<a href=\"Services\/UserService.php.html#24\">App\\Services\\UserService::__construct<\/a>"],[0,1,"<a href=\"Services\/UserService.php.html#36\">App\\Services\\UserService::getPaginatedUsers<\/a>"],[0,1,"<a href=\"Services\/UserService.php.html#47\">App\\Services\\UserService::getAllUsers<\/a>"],[0,1,"<a href=\"Services\/UserService.php.html#58\">App\\Services\\UserService::getUserById<\/a>"],[0,3,"<a href=\"Services\/UserService.php.html#69\">App\\Services\\UserService::createUser<\/a>"],[0,6,"<a href=\"Services\/UserService.php.html#94\">App\\Services\\UserService::updateUser<\/a>"],[0,2,"<a href=\"Services\/UserService.php.html#124\">App\\Services\\UserService::deleteUser<\/a>"],[0,1,"<a href=\"Services\/UserService.php.html#143\">App\\Services\\UserService::getUsersByRole<\/a>"],[0,3,"<a href=\"Services\/UserService.php.html#157\">App\\Services\\UserService::changePassword<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>
